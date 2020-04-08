@@ -1,0 +1,73 @@
+PACKAGE radar_common
+PUBLIC
+WITH Radar_Types;
+
+  -- The antenna device simulates radar environment.
+  -- Direct pulse is triggered by receiving a signal from the
+  -- transmitter. Internal logics evaluates echo pulse delay and
+  -- triggers signal sending to the receiver.
+
+  DEVICE antenna
+  FEATURES
+    antenna_in : IN EVENT PORT;
+    -- The port being connected to the main process: signal processing
+    antenna_out : OUT DATA PORT Radar_Types::Target_Distance;
+    mem_bus : REQUIRES BUS ACCESS mem_bus;
+  FLOWS
+    signal : FLOW SOURCE antenna_out;
+  PROPERTIES
+    Compute_Execution_Time => 1ms..2ms;
+    Deadline => 1ms;
+    Period => 1ms;
+  END antenna;
+
+  DEVICE motor
+  FEATURES
+    motor_out : OUT DATA PORT Radar_Types::Motor_Position;
+    mem_bus : REQUIRES BUS ACCESS mem_bus;
+  PROPERTIES
+    Compute_Execution_Time => 1ms..2ms;
+    Deadline => 1ms;
+    Period => 1ms;
+  END motor;
+
+  DEVICE screen
+  FEATURES
+    screen_in : IN DATA PORT radar_types::Radar_Image;
+    mem_bus : REQUIRES BUS ACCESS mem_bus;
+  FLOWS
+    signal : FLOW SINK screen_in;
+  PROPERTIES
+    Compute_Execution_Time => 1ms..2ms;
+    Deadline => 1ms;
+    Period => 1ms;
+  END screen;
+
+  -- The processor represent an abstraction of hardware and software
+  -- (OS) that is responsible for scheduling and executing the threads
+  -- (It may include functionalities provided by operating systems
+  -- such as scheduling protocol in our case).
+
+  PROCESSOR cpu_leon2
+  FEATURES
+    mem_bus : REQUIRES BUS ACCESS mem_bus;
+  PROPERTIES
+    Scheduling_protocol => (posix_1003_highest_priority_first_protocol); -- RMS = rate monotonic scheduling
+  END cpu_leon2;
+
+  -- The bus ensures communications between the antenna and the main
+  -- process stored in memory
+
+  BUS mem_bus
+  END mem_bus;
+
+  -- The memory hosts the address space of the main process.
+
+  MEMORY RAM
+  FEATURES
+    mem_bus : REQUIRES BUS ACCESS mem_bus;
+  END RAM;
+
+
+END radar_common;
+

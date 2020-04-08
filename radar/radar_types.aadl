@@ -1,0 +1,71 @@
+PACKAGE Radar_Types
+PUBLIC
+WITH Data_Model;
+
+  -- Defines the angular position of the motor, in range 0 .. 359
+
+  DATA Motor_Position
+  PROPERTIES
+    Data_Model::Data_Representation => integer;
+  END Motor_Position;
+
+  -- Define the distance of the target being echoed by the radar pulse
+
+  DATA Target_Distance
+  PROPERTIES
+    Data_Model::Data_Representation => integer;
+  END Target_Distance;
+
+  DATA Target_Position
+  END Target_Position;
+
+  DATA IMPLEMENTATION Target_Position.impl
+  SUBCOMPONENTS
+    theta : DATA Motor_Position;
+    rho : DATA Target_Distance;
+  PROPERTIES
+    Data_Model::Data_Representation => struct;
+  END Target_Position.impl;
+
+  DATA PO_Target_Distance
+  FEATURES
+    Read : PROVIDES SUBPROGRAM ACCESS Radar_Types::Read;
+    Update : PROVIDES SUBPROGRAM ACCESS Radar_Types::Update;
+  END PO_Target_Distance;
+
+  DATA IMPLEMENTATION PO_Target_Distance.Impl
+  SUBCOMPONENTS
+    target_data : DATA Target_Distance;
+  PROPERTIES
+    Concurrency_Control_Protocol => Priority_Ceiling;
+    Data_Model::Data_Representation => Struct;
+  END PO_Target_Distance.Impl;
+
+  DATA Radar_pulse
+  PROPERTIES
+    Data_Model::Data_Representation => boolean;
+  END Radar_pulse;
+
+  DATA Radar_Image
+  END Radar_Image;
+
+  SUBPROGRAM Read
+  FEATURES
+    target_value : OUT PARAMETER target_distance;
+    PO_Target_Distance : REQUIRES DATA ACCESS Radar_Types::PO_Target_Distance.Impl;
+  PROPERTIES
+    Source_Language => (Ada95);
+    Source_Name => "Target_Position.Read";
+  END Read;
+
+  SUBPROGRAM Update
+  FEATURES
+    target_value : IN PARAMETER target_distance;
+    PO_Target_Distance : REQUIRES DATA ACCESS Radar_Types::PO_Target_Distance.Impl;
+  PROPERTIES
+    Source_Language => (Ada95);
+    Source_Name => "Target_Position.Update";
+  END Update;
+
+
+END Radar_Types;

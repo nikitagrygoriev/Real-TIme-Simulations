@@ -1,0 +1,150 @@
+package lab6
+public
+
+  
+  DATA BLACK
+  end BLACK;
+
+  DATA IMPLEMENTATION BLACK.impl
+	PROPERTIES
+--	Concurrency_Control_Protocol =>  Priority_Inheritance;
+	Concurrency_Control_Protocol => Priority_Ceiling;
+  end BLACK.impl;
+  
+  
+  THREAD SCHED_BUS
+--  	FEATURES
+--	  fe: requires data access BLACK.impl;
+  end SCHED_BUS;
+
+  THREAD IMPLEMENTATION SCHED_BUS.impl
+  	PROPERTIES
+	  Deadline => 125 ms;
+	  Period => 125 ms;
+	  Priority => 1;
+	  Compute_Execution_Time => 25ms .. 25ms;
+  end SCHED_BUS.impl;
+
+
+  THREAD TDATA
+	FEATURES
+	  fe: requires data access BLACK.impl;
+  end TDATA;
+
+  THREAD IMPLEMENTATION TDATA.impl
+	PROPERTIES
+	  Deadline => 125 ms;
+	  Period => 125 ms;
+	  Priority => 2;
+	  Compute_Execution_Time => 25ms .. 25ms;
+  end TDATA.impl;
+
+
+  THREAD CONTROL
+	FEATURES
+	  fe: requires data access BLACK.impl;
+  end CONTROL;
+
+  THREAD IMPLEMENTATION CONTROL.impl
+	PROPERTIES
+	  Deadline => 250 ms;
+	  Period => 250 ms;
+	  Priority => 3;
+	  Compute_Execution_Time => 25ms .. 25ms;
+  end CONTROL.impl;
+
+
+  THREAD RADIO
+--  	FEATURES
+--	  fe: requires data access BLACK.impl;
+  end RADIO;
+    
+  THREAD IMPLEMENTATION RADIO.impl
+	PROPERTIES
+	  Deadline => 250 ms;
+	  Period => 250 ms;
+	  Priority => 4;
+	  Compute_Execution_Time => 25ms .. 25ms;	
+  end RADIO.impl;
+
+
+  THREAD VIDEO
+--    FEATURES
+--	  fe: requires data access BLACK.impl;
+  end VIDEO;
+
+  THREAD IMPLEMENTATION VIDEO.impl
+	PROPERTIES
+	  Deadline => 250 ms;
+	  Period => 250 ms;
+	  Priority => 5;
+	  Compute_Execution_Time => 25ms .. 25ms;
+  end VIDEO.impl;
+
+
+  THREAD MEASURE
+    FEATURES
+	  fe: requires data access BLACK.impl;
+  end MEASURE;
+
+  THREAD IMPLEMENTATION MEASURE.impl
+	  PROPERTIES
+	  Deadline => 5000 ms;
+	  Period => 5000 ms;
+	  Priority => 6;
+	  Compute_Execution_Time => 50 ms .. 50 ms;	
+  end MEASURE.impl;
+
+
+  THREAD FORECAST
+	FEATURES
+	  fe: requires data access BLACK.impl;
+  end FORECAST;
+
+  THREAD IMPLEMENTATION FORECAST.impl
+	PROPERTIES
+	  Deadline => 5000 ms;
+	  Period => 5000 ms;
+	  Priority => 7;
+	  Compute_Execution_Time => 50 ms .. 75 ms;	
+  end FORECAST.impl;
+
+
+  PROCESS application
+  end application;
+
+  PROCESS IMPLEMENTATION application.impl
+  	SUBCOMPONENTS
+      SCHED_BUS: THREAD SCHED_BUS.impl;
+  	  RADIO: THREAD RADIO.impl;
+  	  TDATA: THREAD TDATA.impl;
+      VIDEO: THREAD VIDEO.impl;
+      CONTROL: THREAD CONTROL.impl;
+      MEASURE: THREAD MEASURE.impl;
+      FORECAST: THREAD FORECAST.impl;
+      BLACK : DATA BLACK.impl;
+  	CONNECTIONS
+      cnx1 : DATA access BLACK-> TDATA.fe;
+      cnx2 : DATA access BLACK-> CONTROL.fe;
+      cnx3 : DATA access BLACK-> MEASURE.fe;
+      cnx4 : DATA access BLACK-> FORECAST.fe;	
+  end application.impl;
+
+
+  PROCESSOR cpu
+  end cpu;
+  
+
+  SYSTEM smpl
+  end smpl;
+
+  SYSTEM IMPLEMENTATION smpl.impl
+    SUBCOMPONENTS
+      process1 : process application.impl;
+      cpu1     : processor cpu;
+    PROPERTIES
+      Actual_Processor_Binding => (reference(cpu1)) applies to process1;
+      Scheduling_Protocol => (RMS);
+  end smpl.impl;
+	
+end lab6;

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="998d18b5-1ac5-4e69-abf9-0e3cd789a484" manual="true">
+    <element uuid="653e101d-fe1b-4e9f-9bf5-1dd23fd4bf1e" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>analyser</seg>
+      </bo>
+      <position x="248.0" y="368.0"/>
+      <size width="112.0" height="35.0"/>
+    </element>
+    <element uuid="e7c44d7a-32f2-47b8-bdb1-e903dc98bb8c" manual="true">
+      <element uuid="801ed15a-1283-4f4b-9ec0-95e31a002d94" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="244.0" y="397.5"/>
+          <point x="256.0" y="397.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>analyser.impl</seg>
+      </bo>
+      <position x="85.0" y="368.0"/>
+      <size width="143.0" height="35.0"/>
+    </element>
+    <element uuid="cb97b1b7-ccba-49e0-8a26-b4d954cd28a3" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>analyser_spg</seg>
+      </bo>
+      <position x="410.0" y="38.0"/>
+      <size width="147.0" height="35.0"/>
+    </element>
+    <element uuid="d5fc3199-a072-408e-b29b-af54ede1915b" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>controller</seg>
+      </bo>
+      <position x="552.0" y="368.0"/>
+      <size width="120.0" height="35.0"/>
+    </element>
+    <element uuid="4be345b1-9aab-49fa-8854-869d66ee9b75" manual="true">
+      <element uuid="f5f71303-69d5-46f7-a3ce-4d17d21a7e22" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="548.0" y="397.5"/>
+          <point x="560.0" y="397.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>controller.impl</seg>
+      </bo>
+      <position x="380.0" y="368.0"/>
+      <size width="152.0" height="35.0"/>
+    </element>
+    <element uuid="2033c505-2547-4a37-b162-d400924e8f46" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>controller_spg</seg>
+      </bo>
+      <position x="85.0" y="93.0"/>
+      <size width="155.0" height="35.0"/>
+    </element>
+    <element uuid="a60fb66b-366a-4722-9f97-1a8760b1711e" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>data1</seg>
+      </bo>
+      <position x="636.0" y="93.0"/>
+      <size width="88.0" height="35.0"/>
+    </element>
+    <element uuid="75824e95-c434-4c9b-b282-a6e69c1c1173" manual="true">
+      <element uuid="b353cb3b-2b66-4784-8514-55173bd9ac7d" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="632.0" y="122.5"/>
+          <point x="644.0" y="122.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>data1.impl</seg>
+      </bo>
+      <position x="496.0" y="93.0"/>
+      <size width="120.0" height="35.0"/>
+    </element>
+    <element uuid="6ca69205-760b-4f16-b007-7e692d20dbc5" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>display_panel</seg>
+      </bo>
+      <position x="287.0" y="533.0"/>
+      <size width="146.0" height="35.0"/>
+    </element>
+    <element uuid="ecda7d9d-b248-4b4c-8c51-dc39e18531ab" manual="true">
+      <element uuid="088b98c8-ce10-43a1-b2f5-2133e85e72c6" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="283.0" y="562.5"/>
+          <point x="295.0" y="562.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>display_panel.impl</seg>
+      </bo>
+      <position x="85.0" y="533.0"/>
+      <size width="182.0" height="35.0"/>
+    </element>
+    <element uuid="35cc1d55-ba97-4f6b-a787-e4fd2643946c" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>display_spg</seg>
+      </bo>
+      <position x="85.0" y="38.0"/>
+      <size width="139.0" height="35.0"/>
+    </element>
+    <element uuid="e8e43ea6-4bb3-417e-82b4-7dbac36be4f7" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>processing</seg>
+      </bo>
+      <position x="280.0" y="478.0"/>
+      <size width="129.0" height="35.0"/>
+    </element>
+    <element uuid="7f4de514-9cea-44da-a5e0-c4165a95f904" manual="true">
+      <element uuid="1246c647-9c2d-4ad8-8f99-c48a2717e70d" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="276.0" y="507.5"/>
+          <point x="288.0" y="507.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>processing.others</seg>
+      </bo>
+      <position x="85.0" y="478.0"/>
+      <size width="175.0" height="35.0"/>
+    </element>
+    <element uuid="98f46c33-ede4-44c1-89df-2d20ee4b95e6" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>radar</seg>
+      </bo>
+      <position x="389.0" y="93.0"/>
+      <size width="87.0" height="35.0"/>
+    </element>
+    <element uuid="13e770ba-6509-4130-9e6d-ae3b1f32cbc9" manual="true">
+      <element uuid="7b74c52b-e585-4e45-a989-54cf571a2d2a" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="385.0" y="122.5"/>
+          <point x="397.0" y="122.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>radar.v1</seg>
+      </bo>
+      <position x="260.0" y="93.0"/>
+      <size width="109.0" height="35.0"/>
+    </element>
+    <element uuid="26f83e53-5366-44ae-806d-ecea926564f3" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>reader</seg>
+      </bo>
+      <position x="496.0" y="148.0"/>
+      <size width="99.0" height="35.0"/>
+    </element>
+    <element uuid="45191d20-0683-48bb-a2c4-44c9d01c1b07" manual="true">
+      <element uuid="477abc55-0480-43c2-a161-27e1525ee900" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="492.0" y="177.5"/>
+          <point x="504.0" y="177.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>reader.impl</seg>
+      </bo>
+      <position x="346.0" y="148.0"/>
+      <size width="130.0" height="35.0"/>
+    </element>
+    <element uuid="50555e69-74c8-4421-9b82-3291002c0525" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>reader1</seg>
+      </bo>
+      <position x="243.0" y="313.0"/>
+      <size width="106.0" height="35.0"/>
+    </element>
+    <element uuid="864efc7a-53af-4de6-90fc-48b275cd0458" manual="true">
+      <element uuid="98330e89-c25d-4292-9df8-4ccb97b27b31" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="239.0" y="342.5"/>
+          <point x="251.0" y="342.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>reader1.impl</seg>
+      </bo>
+      <position x="85.0" y="313.0"/>
+      <size width="138.0" height="35.0"/>
+    </element>
+    <element uuid="024da258-2ad1-41c5-8964-5fe2c1b60313" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>reader2</seg>
+      </bo>
+      <position x="519.0" y="258.0"/>
+      <size width="106.0" height="35.0"/>
+    </element>
+    <element uuid="df11c6d1-4a28-4fc2-b7d5-6c0088ce7a5e" manual="true">
+      <element uuid="14929b06-7ce5-423b-92c0-c4564c14a446" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="515.0" y="287.5"/>
+          <point x="527.0" y="287.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>reader2.impl</seg>
+      </bo>
+      <position x="361.0" y="258.0"/>
+      <size width="138.0" height="35.0"/>
+    </element>
+    <element uuid="fc993854-e9fa-4dbe-9440-8084c18311c2" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>receiver</seg>
+      </bo>
+      <position x="529.0" y="313.0"/>
+      <size width="109.0" height="35.0"/>
+    </element>
+    <element uuid="d8d2c0b3-1cf0-4d4d-936e-24b23cb548c1" manual="true">
+      <element uuid="0507de6b-8846-44b2-99dc-57764d79e034" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="525.0" y="342.5"/>
+          <point x="537.0" y="342.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>receiver.impl</seg>
+      </bo>
+      <position x="369.0" y="313.0"/>
+      <size width="140.0" height="35.0"/>
+    </element>
+    <element uuid="237051af-6897-4b23-9032-caaa985fbad5" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>receiver_spg</seg>
+      </bo>
+      <position x="244.0" y="38.0"/>
+      <size width="146.0" height="35.0"/>
+    </element>
+    <element uuid="2aec6c77-186f-4ef2-8595-cc07bec6578d" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>transmitter</seg>
+      </bo>
+      <position x="265.0" y="423.0"/>
+      <size width="127.0" height="35.0"/>
+    </element>
+    <element uuid="6c1b2a2f-9065-4957-9af9-718a20d76993" manual="true">
+      <element uuid="78d8e0fd-aaab-4ad1-a790-b2f72eb07689" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="261.0" y="452.5"/>
+          <point x="273.0" y="452.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>transmitter.impl</seg>
+      </bo>
+      <position x="85.0" y="423.0"/>
+      <size width="160.0" height="35.0"/>
+    </element>
+    <element uuid="5e6e7e59-ad24-457f-a0f0-1bb75f9d76fe" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>writer</seg>
+      </bo>
+      <position x="231.0" y="148.0"/>
+      <size width="95.0" height="35.0"/>
+    </element>
+    <element uuid="48552fcf-1877-4612-b345-756820979b62" manual="true">
+      <element uuid="46d9bddb-79b2-4fce-aceb-672c50cd0a7d" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="227.0" y="177.5"/>
+          <point x="239.0" y="177.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>writer.impl</seg>
+      </bo>
+      <position x="85.0" y="148.0"/>
+      <size width="126.0" height="35.0"/>
+    </element>
+    <element uuid="969f69eb-a620-4ebb-9464-7d3b84287559" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>writer1</seg>
+      </bo>
+      <position x="239.0" y="258.0"/>
+      <size width="102.0" height="35.0"/>
+    </element>
+    <element uuid="84e3a2b3-43e5-4b58-b65f-9dba71bb0d85" manual="true">
+      <element uuid="70932b8e-3978-418d-8162-49f4cbcd184c" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="235.0" y="287.5"/>
+          <point x="247.0" y="287.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>writer1.impl</seg>
+      </bo>
+      <position x="85.0" y="258.0"/>
+      <size width="134.0" height="35.0"/>
+    </element>
+    <element uuid="2ccf666e-a241-43b2-ac58-c0cafccb25d2" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>writer2</seg>
+      </bo>
+      <position x="239.0" y="203.0"/>
+      <size width="102.0" height="35.0"/>
+    </element>
+    <element uuid="0412e28f-bdf1-49ef-b3f7-ae31d27c25ca" manual="true">
+      <element uuid="347c531b-f4fa-4495-b72d-56535b1a1a81" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="235.0" y="232.5"/>
+          <point x="247.0" y="232.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>writer2.impl</seg>
+      </bo>
+      <position x="85.0" y="203.0"/>
+      <size width="134.0" height="35.0"/>
+    </element>
+    <element uuid="2d65afbb-6092-4d80-ba83-11598e13bef3" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>writer3</seg>
+      </bo>
+      <position x="515.0" y="203.0"/>
+      <size width="102.0" height="35.0"/>
+    </element>
+    <element uuid="5d613d3b-788b-490a-b322-64d069a6a133" manual="true">
+      <element uuid="236400e9-0cc3-4645-819e-f3a183bae68e" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="511.0" y="232.5"/>
+          <point x="523.0" y="232.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>writer3.impl</seg>
+      </bo>
+      <position x="361.0" y="203.0"/>
+      <size width="134.0" height="35.0"/>
+    </element>
+    <bo>
+      <seg>package</seg>
+      <seg>radar_v1</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="736.0" height="580.0"/>
+  </element>
+  <config type="package" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>package</seg>
+      <seg>radar_v1</seg>
+    </context>
+  </config>
+</diagram:Diagram>

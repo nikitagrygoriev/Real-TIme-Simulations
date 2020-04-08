@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="8ecf040b-dddd-4b38-b916-19f1c942ecbc" manual="true">
+    <element uuid="3c3d3365-30a9-46e0-a38a-cb679aa80c0d" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>get_angle</seg>
+      </bo>
+      <position y="160.0"/>
+    </element>
+    <element uuid="204237e4-c733-4396-bf7b-bc75397f7ff4" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>receive_pulse</seg>
+      </bo>
+      <position y="10.0"/>
+    </element>
+    <element uuid="74c2bf6d-0284-48bd-be26-558c04335ae6" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>send_pulse</seg>
+      </bo>
+      <position y="60.0"/>
+    </element>
+    <element uuid="1a6277c8-458e-4679-837f-8baf511cbd31" manual="true" dockArea="left">
+      <bo>
+        <seg>feature</seg>
+        <seg>to_screen</seg>
+      </bo>
+      <position y="110.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>processing</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="330.0" height="210.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>classifier</seg>
+      <seg>radar_v1::processing</seg>
+    </context>
+  </config>
+</diagram:Diagram>

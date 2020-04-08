@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="914f3773-1ce2-4f18-b395-409a154f3197" manual="true">
+    <element uuid="c6fddb9a-6545-46b6-a68b-c0f411266715" manual="true">
+      <element uuid="9866631c-071e-4300-b770-44c737cda845" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>antenna_in</seg>
+        </bo>
+        <position x="191.0" y="10.0"/>
+      </element>
+      <element uuid="d726adfb-1ea5-4421-9e36-2c586d4fca68" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>antenna_out</seg>
+        </bo>
+        <position x="183.0" y="60.0"/>
+      </element>
+      <element uuid="ae6c3f6d-9ae2-42a9-9b0b-d7430cf7832f" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>mem_bus</seg>
+        </bo>
+        <position y="35.0"/>
+      </element>
+      <element uuid="20ec7179-efae-4f0d-a0e9-3b1aa419e8e3" manual="true">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>flow_specification_instance</seg>
+          <seg>signal</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>aerial</seg>
+      </bo>
+      <position x="178.0" y="118.0"/>
+      <size width="277.0" height="110.0"/>
+    </element>
+    <element uuid="68a480a5-66cc-4798-8a3b-9eba2bd15c4c" manual="true">
+      <element uuid="7e4a1075-6a36-42df-8b32-7f35dd405bd1" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>mem_bus</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>cpu</seg>
+      </bo>
+      <position x="178.0" y="248.0"/>
+      <size width="236.0" height="60.0"/>
+    </element>
+    <element uuid="0bb5c54e-cae6-43d2-9060-9bb311a2b22c" manual="true">
+      <element uuid="d5e96a14-fb5f-4294-8dc2-488379d0abc1" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>get_angle</seg>
+        </bo>
+        <position y="110.0"/>
+      </element>
+      <element uuid="0ee78d3a-c535-4659-aa1b-913374437bb8" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>receive_pulse</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <element uuid="962234c8-9129-4f8a-b96d-9a943deb6f40" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>send_pulse</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="a514b1fb-8d78-41a8-9986-fbe8515005d7" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>to_screen</seg>
+        </bo>
+        <position x="219.0" y="60.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>main</seg>
+      </bo>
+      <position x="475.0" y="118.0"/>
+      <size width="297.0" height="160.0"/>
+    </element>
+    <element uuid="7058e42e-2e57-497c-b549-18fcce080cf6" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>mem_bus</seg>
+      </bo>
+      <position x="12.0" y="70.0"/>
+      <size width="116.0" height="60.0"/>
+    </element>
+    <element uuid="255ccae4-3fae-43f0-8bdf-6dc3b10efedb" manual="true">
+      <element uuid="b9ca9248-924a-4b5f-a9e4-a3faa60248f9" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>mem_bus</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <element uuid="66902061-9147-41ca-bfde-1c2dc608aa42" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>screen_in</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="610a1d7b-c727-4fd4-a470-db48ddccfa40" manual="true">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>flow_specification_instance</seg>
+          <seg>signal</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>monitor</seg>
+      </bo>
+      <position x="792.0" y="168.0"/>
+      <size width="262.0" height="110.0"/>
+    </element>
+    <element uuid="028b38e0-ab96-49df-b6c2-b9321e05b2a6" manual="true">
+      <element uuid="c9b46e77-81a9-488c-9015-4d75dbc137f4" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>mem_bus</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>ram</seg>
+      </bo>
+      <position x="178.0" y="38.0"/>
+      <size width="244.0" height="60.0"/>
+    </element>
+    <element uuid="ee8aff4f-e1c8-472a-ac4f-e506dcf31a1b" manual="true">
+      <element uuid="c9d99517-8ea1-4387-9571-24c2b4df9dd7" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>mem_bus</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="6607728e-14e9-41ea-95d6-44b9caf2915b" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>motor_out</seg>
+        </bo>
+        <position x="167.0" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>rotor</seg>
+      </bo>
+      <position x="192.0" y="328.0"/>
+      <size width="249.0" height="60.0"/>
+    </element>
+    <element uuid="eac09724-e023-4ccb-be46-9157556952dd" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx1 : radar_v1_instance.aerial.antenna_out -> radar_v1_instance.main.receive_pulse</seg>
+      </bo>
+    </element>
+    <element uuid="0017b96a-caf8-41f0-a6b5-d00bdf2866dc" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx2 : radar_v1_instance.rotor.motor_out -> radar_v1_instance.main.get_angle</seg>
+      </bo>
+      <bendpoints>
+        <point x="477.0" y="382.0"/>
+        <point x="477.0" y="272.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="a44b2767-acb0-45fa-82d1-39bedca0c853" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx3 : radar_v1_instance.main.send_pulse -> radar_v1_instance.aerial.antenna_in</seg>
+      </bo>
+    </element>
+    <element uuid="9cebd4f5-b000-4988-a6a2-0570155e5469" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx4 : radar_v1_instance.main.to_screen -> radar_v1_instance.monitor.screen_in</seg>
+      </bo>
+    </element>
+    <element uuid="df875f7c-b7e9-4c0c-8dde-70ff714938a4" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx5 : radar_v1_instance.mem_bus -> radar_v1_instance.aerial.mem_bus</seg>
+      </bo>
+      <bendpoints>
+        <point x="144.0" y="102.0"/>
+        <point x="180.0" y="102.0"/>
+        <point x="180.0" y="197.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="2a2bcc00-201e-42b9-884f-1ce84a1f937e" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx6 : radar_v1_instance.mem_bus -> radar_v1_instance.rotor.mem_bus</seg>
+      </bo>
+      <bendpoints>
+        <point x="144.0" y="122.0"/>
+        <point x="160.0" y="122.0"/>
+        <point x="160.0" y="382.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="a503139d-d30b-4c7e-9ba5-4482f19a21b3" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx7 : radar_v1_instance.mem_bus -> radar_v1_instance.monitor.mem_bus</seg>
+      </bo>
+      <bendpoints>
+        <point x="144.0" y="132.0"/>
+        <point x="150.0" y="132.0"/>
+        <point x="150.0" y="410.0"/>
+        <point x="794.0" y="410.0"/>
+        <point x="794.0" y="272.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="3de3f045-04cd-4781-bf64-d724d64bd826" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx8 : radar_v1_instance.mem_bus -> radar_v1_instance.cpu.mem_bus</seg>
+      </bo>
+      <bendpoints>
+        <point x="144.0" y="112.0"/>
+        <point x="170.0" y="112.0"/>
+        <point x="170.0" y="302.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="f8f10bda-540c-4b8b-926f-30bec83974b6" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cnx9 : radar_v1_instance.mem_bus -> radar_v1_instance.ram.mem_bus</seg>
+      </bo>
+      <bendpoints>
+        <point x="140.0" y="92.0"/>
+      </bendpoints>
+    </element>
+    <bo>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/radar/instances/radar_v1_radar_v1_instance.aaxl2</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="1066.0" height="411.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/radar/instances/radar_v1_radar_v1_instance.aaxl2</seg>
+    </context>
+  </config>
+</diagram:Diagram>

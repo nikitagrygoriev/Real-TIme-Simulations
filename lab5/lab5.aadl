@@ -1,0 +1,152 @@
+package lab5
+public
+
+  
+  DATA data1
+  end data1;
+
+  DATA IMPLEMENTATION data1.impl
+	PROPERTIES
+	  Concurrency_Control_Protocol => Priority_Ceiling;
+  end data1.impl;
+  
+  
+  THREAD reader
+  	FEATURES
+	  read: requires data access data1.impl;
+  end reader;
+
+  THREAD IMPLEMENTATION reader.impl
+  	PROPERTIES
+	  Deadline => 10 ms;
+	  Period => 10 ms;
+	  Priority => 10;
+	  Compute_Execution_Time => 1900 us .. 2100 us;
+  end reader.impl;
+
+
+  THREAD reader1
+	FEATURES
+	  read: requires data access data1.impl;
+  end reader1;
+
+  THREAD IMPLEMENTATION reader1.impl
+	PROPERTIES
+	  Deadline => 40 ms;
+	  Period => 40 ms;
+	  Priority => 4;
+	  Compute_Execution_Time => 1 ms ..  3ms;
+  end reader1.impl;
+
+
+  THREAD reader2
+	FEATURES
+	  read: requires data access data1.impl;
+  end reader2;
+
+  THREAD IMPLEMENTATION reader2.impl
+	PROPERTIES
+	  Deadline => 40 ms;
+	  Period => 40 ms;
+	  Priority => 5;
+	  Compute_Execution_Time => 1 ms .. 2 ms;
+  end reader2.impl;
+
+
+  THREAD writer
+  	FEATURES
+	  write: requires data access data1.impl;
+  end writer;
+    
+  THREAD IMPLEMENTATION writer.impl
+	PROPERTIES
+	  Deadline => 10 ms;
+	  Period => 10 ms;
+	  Priority => 20;
+	  Compute_Execution_Time => 1 ms .. 3 ms;	
+  end writer.impl;
+
+
+  THREAD writer1
+    FEATURES
+	  write: requires data access data1.impl;
+  end writer1;
+
+  THREAD IMPLEMENTATION writer1.impl
+	PROPERTIES
+	  Deadline => 40 ms;
+	  Period => 40 ms;
+	  Priority => 1;
+	  Compute_Execution_Time => 1 ms .. 5 ms;	
+  end writer1.impl;
+
+
+  THREAD writer2
+    FEATURES
+	  write: requires data access data1.impl;
+  end writer2;
+
+  THREAD IMPLEMENTATION writer2.impl
+	  PROPERTIES
+	  Deadline => 20 ms;
+	  Period => 20 ms;
+	  Priority => 2;
+	  Compute_Execution_Time => 1 ms .. 4 ms;	
+  end writer2.impl;
+
+
+  THREAD writer3
+	FEATURES
+	  write: requires data access data1.impl;
+  end writer3;
+
+  THREAD IMPLEMENTATION writer3.impl
+	PROPERTIES
+	  Deadline => 20 ms;
+	  Period => 20 ms;
+	  Priority => 3;
+	  Compute_Execution_Time => 1 ms .. 2 ms;	
+  end writer3.impl;
+
+
+  PROCESS application
+  end application;
+
+  PROCESS IMPLEMENTATION application.impl
+  	SUBCOMPONENTS
+      reader: THREAD reader.impl;
+  	  writer: THREAD writer.impl;
+  	  reader1: THREAD reader1.impl;
+      writer1: THREAD writer1.impl;
+      reader2: THREAD reader2.impl;
+      writer2: THREAD writer2.impl;
+      writer3: THREAD writer3.impl;
+      data1 : DATA data1.impl;
+  	CONNECTIONS
+  	  cnx9 : DATA access data1-> reader.read;
+      cnx10 : DATA access data1-> reader1.read;
+      cnx11 : DATA access data1-> reader2.read;
+      cnx12 : DATA access data1-> writer.write;
+      cnx13 : DATA access data1-> writer1.write;
+      cnx14 : DATA access data1-> writer2.write;
+      cnx15 : DATA access data1-> writer3.write;	
+  end application.impl;
+
+
+  PROCESSOR cpu
+  end cpu;
+  
+
+  SYSTEM smpl
+  end smpl;
+
+  SYSTEM IMPLEMENTATION smpl.impl
+    SUBCOMPONENTS
+      process1 : process application.impl;
+      cpu1     : processor cpu;
+    PROPERTIES
+      Actual_Processor_Binding => (reference(cpu1)) applies to process1;
+      Scheduling_Protocol => (POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL);
+  end smpl.impl;
+	
+end lab5;
