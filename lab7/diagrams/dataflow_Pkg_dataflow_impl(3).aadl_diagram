@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="58e2a909-8354-4726-b235-b17c1c87531f" manual="true">
+    <element uuid="107b88f7-93ef-4707-b64b-5d4032b69153" manual="true">
+      <element uuid="56fd1e49-782f-4a08-b9dd-1aca3d4c6928" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>communication_properties::timing</seg>
+        </bo>
+      </element>
+      <element uuid="0641c912-f6fa-467d-abc3-a18384cf3d79" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>c1</seg>
+      </bo>
+    </element>
+    <element uuid="34e4c089-f29f-4883-963c-02e8c6ad5535" manual="true">
+      <element uuid="e2dcfdd4-b653-4c32-9b69-16ec5d6e7bb0" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>communication_properties::timing</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>c2</seg>
+      </bo>
+    </element>
+    <element uuid="ed4ed8a3-b125-4a9c-9af6-7e6500e94103" manual="true">
+      <bo>
+        <seg>realization</seg>
+      </bo>
+    </element>
+    <element uuid="420ed754-65c0-4aa5-a8c3-d995dae114e0" manual="true">
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>my_platform</seg>
+      </bo>
+      <position x="12.0" y="59.0"/>
+      <size width="138.0" height="35.0"/>
+    </element>
+    <element uuid="724abc47-d397-47da-b849-2d7b46358ba8" manual="true">
+      <element uuid="f2b9e5b1-905f-46e9-be81-f88df068403d" manual="true">
+        <element uuid="3ce0d05e-c20e-413a-b649-c1f49c316fb1" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>communication_properties::timing</seg>
+          </bo>
+        </element>
+        <element uuid="af293df0-7112-43b3-8deb-d6740da79cb0" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>c0</seg>
+        </bo>
+        <bendpoints>
+          <point x="58.0" y="279.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="d7c50186-aca6-419c-94d6-23ddbf218697" manual="true">
+        <element uuid="4b7e6ade-0f23-466b-bd01-eb1abc000663" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>communication_properties::timing</seg>
+          </bo>
+        </element>
+        <element uuid="06c14989-ca21-4fba-9ce5-e9932412cc0f" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>c1</seg>
+        </bo>
+      </element>
+      <element uuid="2ea29882-f512-4bae-ba6d-5c61c84fea39" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>input</seg>
+        </bo>
+        <position x="287.0" y="170.0"/>
+      </element>
+      <element uuid="6dd12a1f-6d31-4b9e-94b5-ba425566142e" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>output</seg>
+        </bo>
+        <position x="279.0" y="69.0"/>
+      </element>
+      <element uuid="80e01b6e-fe0c-4bb5-9e4d-5d04b0fc2beb" manual="true">
+        <element uuid="8dac3e99-1445-4039-921f-4dd440614d4d" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>input</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <element uuid="bfb8d033-9606-4aff-8705-53908baa9dcf" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>output</seg>
+          </bo>
+          <position x="133.0" y="10.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>t1</seg>
+        </bo>
+        <position x="62.0" y="59.0"/>
+        <size width="191.0" height="60.0"/>
+      </element>
+      <element uuid="3249c986-b931-4cc0-871f-ef74f12e3469" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>process1</seg>
+      </bo>
+      <position x="28.0" y="128.0"/>
+      <size width="337.0" height="261.0"/>
+    </element>
+    <element uuid="bf7943eb-bf02-4335-a04b-870a8eb5671f" manual="true">
+      <element uuid="ad85a4fc-9c62-4986-b7ee-842ed0bd97ab" manual="true">
+        <element uuid="20c1e1b5-47f4-4f5e-bc75-9a64cada83b8" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>communication_properties::timing</seg>
+          </bo>
+        </element>
+        <element uuid="f9cef5cf-4ebe-4545-9313-ffe75f9b524d" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>c0</seg>
+        </bo>
+      </element>
+      <element uuid="4ae69aa0-ae97-47f4-9b51-48c136d53828" manual="true">
+        <element uuid="bd59de77-f1ec-4bdb-992c-a1fd3994c127" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>communication_properties::timing</seg>
+          </bo>
+        </element>
+        <element uuid="7ce08dde-4f08-4f2f-ab9d-13f30d74b8f4" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>c1</seg>
+        </bo>
+      </element>
+      <element uuid="0229f402-0a6e-4ea6-851c-887b9633d1b7" manual="true">
+        <element uuid="5475dd14-e4bf-42cc-96f5-bfb27e5a253b" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>communication_properties::timing</seg>
+          </bo>
+        </element>
+        <element uuid="6c26abb3-3aee-44dd-94e8-f13895e812c2" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>c2</seg>
+        </bo>
+      </element>
+      <element uuid="f0c99222-84dc-49c7-9724-719357f1ac49" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>input</seg>
+        </bo>
+        <position y="69.0"/>
+      </element>
+      <element uuid="cde0f3eb-fc4a-418a-9287-c00945898bbd" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>output</seg>
+        </bo>
+        <position y="220.0"/>
+      </element>
+      <element uuid="adfcc113-78cc-43bd-8df2-8c0e2afc8f57" manual="true">
+        <element uuid="7b059fd4-f4aa-44ed-9b2c-0051df112876" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>input</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <element uuid="a94d3ad7-a8dd-4ab4-baca-a44187da78d3" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>output</seg>
+          </bo>
+          <position x="133.0" y="10.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>t2</seg>
+        </bo>
+        <position x="140.0" y="59.0"/>
+        <size width="191.0" height="60.0"/>
+      </element>
+      <element uuid="266240e9-e42f-4d88-843d-fb454dc0366a" manual="true">
+        <element uuid="0f58579e-c4d9-457e-a8cd-105690234744" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>input</seg>
+          </bo>
+          <position x="141.0" y="16.0"/>
+        </element>
+        <element uuid="128fba7a-c2de-41b0-b83f-fd13776cf2b1" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>output</seg>
+          </bo>
+          <position y="55.0"/>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>t3</seg>
+        </bo>
+        <position x="140.0" y="165.0"/>
+        <size width="191.0" height="95.0"/>
+      </element>
+      <element uuid="830dc43e-9cb0-4fa6-ac39-d1778355614c" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>process2</seg>
+      </bo>
+      <position x="428.0" y="128.0"/>
+      <size width="534.0" height="321.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>dataflow.impl</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="979.0" height="489.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>classifier</seg>
+      <seg>dataflow_pkg::dataflow.impl</seg>
+    </context>
+  </config>
+</diagram:Diagram>

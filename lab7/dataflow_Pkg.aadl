@@ -1,0 +1,162 @@
+PACKAGE dataflow_Pkg
+
+ 
+
+PUBLIC
+
+ 
+
+DATA my_data
+
+END my_data;
+
+ 
+
+THREAD a_thread
+
+FEATURES
+
+  input : IN DATA PORT my_data;
+
+  output : OUT DATA PORT my_data;
+
+END a_thread;
+
+ 
+
+PROCESS my_process
+
+FEATURES
+
+  input : IN DATA PORT my_data;
+
+  output : OUT DATA PORT my_data;
+
+END my_process;
+
+ 
+
+PROCESSOR cpu
+
+PROPERTIES   
+
+   Scheduling_Protocol=>(Posix_1003_Highest_Priority_First_Protocol);
+
+END cpu;
+
+ 
+
+SYSTEM dataflow
+
+		
+END dataflow;
+
+ 
+
+PROCESS IMPLEMENTATION my_process.source_impl      
+
+SUBCOMPONENTS
+
+  T1 : THREAD a_thread
+
+    { Dispatch_Protocol => Periodic;
+
+      Compute_Execution_Time => 3 ms .. 3 ms;   
+
+      Period => 20 ms;
+
+      Priority => 30;
+
+      Deadline => 20 ms; };
+
+CONNECTIONS
+
+  C0 : PORT input -> T1.input;
+
+  C1 : PORT T1.output -> output; 
+  
+--  C3 : PORT my_process.sink_impl.T2 -> process.input; 
+
+PROPERTIES
+
+  Timing => immediate applies to C0, C1;
+
+END my_process.source_impl;
+
+ 
+
+ 
+
+PROCESS IMPLEMENTATION my_process.sink_impl      
+
+SUBCOMPONENTS
+
+  T2 : THREAD a_thread
+
+    { Dispatch_Protocol => Periodic;
+
+      Compute_Execution_Time => 3 ms .. 3 ms;
+
+      Period => 20 ms;
+
+      Priority => 10;
+
+      Deadline => 20 ms; };
+
+  T3 : THREAD a_thread
+
+    { Dispatch_Protocol => Periodic;
+
+      Compute_Execution_Time => 3 ms .. 3 ms;
+
+      Period => 20 ms;
+
+      Priority => 100;
+
+      Deadline => 20 ms; };
+
+CONNECTIONS
+
+  C0 : PORT input -> T2.input;
+
+  C1 : PORT T2.output -> T3.input;
+
+  C2 : PORT T3.output -> output;
+   
+PROPERTIES
+		
+  Timing => delayed applies to C0, C1, C2;
+
+END my_process.sink_impl;
+
+ 
+
+SYSTEM IMPLEMENTATION dataflow.impl
+
+SUBCOMPONENTS
+
+  process1 : PROCESS my_process.source_impl;
+
+  process2 : PROCESS my_process.sink_impl;
+
+  my_platform : PROCESSOR cpu;
+
+CONNECTIONS
+
+--	C1 : PORT process1.output -> process2.input ;
+	C2 : PORT process2.output -> process1.input ;	
+
+PROPERTIES
+
+  Actual_Processor_Binding => ( reference(my_platform) ) applies to process1;
+
+  Actual_Processor_Binding => ( reference(my_platform) ) applies to process2;
+  
+--  Timing => delayed applies to C1;
+  Timing => delayed applies to C2;
+    
+END dataflow.impl;
+
+ 
+
+END dataflow_Pkg;
