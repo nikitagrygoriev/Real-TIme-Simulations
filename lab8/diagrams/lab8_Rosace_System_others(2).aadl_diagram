@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="b95d3852-c21d-4320-b067-988de3da5fec" manual="true">
+    <element uuid="c47750d1-968a-45fc-8f88-5d1b099d8692" manual="true">
+      <element uuid="c3c18da8-2537-456c-a627-99ee5c05f6e9" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>rosace_system_others_new_connection</seg>
+      </bo>
+    </element>
+    <element uuid="fd186a02-76d6-47a5-85a5-1a3f51db99c1" manual="true">
+      <element uuid="bc65bf71-fc76-496b-baee-43d54838d102" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>rosace_system_others_new_connection2</seg>
+      </bo>
+      <bendpoints>
+        <point x="474.0" y="477.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="ae62b9bd-dc4d-450e-94c7-15c45bd79305" manual="true">
+      <element uuid="1ce449ca-3cd5-4a02-923f-9d9eedc89cee" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>rosace_system_others_new_connection3</seg>
+      </bo>
+      <bendpoints>
+        <point x="450.0" y="588.0"/>
+        <point x="218.0" y="589.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="19416207-8d55-421a-97ee-4b094ab495ac" manual="true">
+      <element uuid="77c07121-9549-4af1-99da-1a650288eb0c" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>rosace_system_others_new_connection4</seg>
+      </bo>
+      <bendpoints>
+        <point x="261.0" y="384.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="c98474ad-8d3f-4cd7-ad3e-7a4853c19c5b" manual="true">
+      <element uuid="083e9329-5b9b-4a4d-a522-0c9817085f93" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>rosace_system_others_new_connection5</seg>
+      </bo>
+      <bendpoints>
+        <point x="242.0" y="530.0"/>
+        <point x="305.0" y="502.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="9c455ef9-505b-46b1-a763-dea8a6fc533a" manual="true">
+      <element uuid="6f3cd319-1d02-4465-8547-3de7f8c8c802" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>rosace_system_others_new_connection6</seg>
+      </bo>
+      <bendpoints>
+        <point x="258.0" y="344.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="57fe2e9d-1f30-425c-a9a2-5d162c3aa91b" manual="true">
+      <element uuid="6983ed30-4e48-43a9-bfff-3258d18b753a" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>rosace_system_others_new_connection7</seg>
+      </bo>
+      <bendpoints>
+        <point x="262.0" y="429.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="ece17a6c-c7da-45c3-a299-fca986d3d9d6" manual="true">
+      <element uuid="8aa70224-7c01-4398-a027-d6db4c6ddf04" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>rosace_system_others_new_connection8</seg>
+      </bo>
+    </element>
+    <element uuid="610e3ac9-aaa8-48dd-bef9-3d939dabc76e" manual="true">
+      <bo>
+        <seg>realization</seg>
+      </bo>
+    </element>
+    <element uuid="ca2ecc16-1562-441b-a0ed-b42ae7a45d43" manual="true">
+      <element uuid="43cd2064-c36e-42d1-90ec-e8fc6e2750d4" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>cpu1</seg>
+        </bo>
+        <position x="12.0" y="38.0"/>
+        <size width="90.0" height="35.0"/>
+      </element>
+      <element uuid="f58d0e2b-7ddc-4177-9fc5-b7825f1d38d0" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>cpu2</seg>
+        </bo>
+        <position x="12.0" y="93.0"/>
+        <size width="90.0" height="35.0"/>
+      </element>
+      <element uuid="aad576d2-690e-4797-a94c-0bc9f564772b" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>cpu3</seg>
+        </bo>
+        <position x="12.0" y="148.0"/>
+        <size width="90.0" height="35.0"/>
+      </element>
+      <element uuid="b3c061a1-0eca-4050-8492-91d4bc54c997" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>cpu4</seg>
+        </bo>
+        <position x="12.0" y="203.0"/>
+        <size width="90.0" height="35.0"/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>hardware</seg>
+      </bo>
+      <position x="185.0" y="59.0"/>
+      <size width="117.0" height="250.0"/>
+    </element>
+    <element uuid="8016aa69-8b48-4c86-bf62-a823d634a32f" manual="true">
+      <element uuid="d0af4c68-f4a7-4d8e-9930-13b18b290c4f" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>deployment_properties::actual_processor_binding</seg>
+          <seg>43cd2064-c36e-42d1-90ec-e8fc6e2750d4</seg>
+        </bo>
+        <bendpoints>
+          <point x="516.0" y="112.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="c4972cd5-3d90-4dec-a716-2f46e405b8e1" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>aircraft_dynamics</seg>
+        </bo>
+        <position x="12.0" y="148.0"/>
+        <size width="178.0" height="35.0"/>
+      </element>
+      <element uuid="8a910b76-7465-4dbe-be11-bb41e58ae250" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>elevator</seg>
+        </bo>
+        <position x="12.0" y="93.0"/>
+        <size width="111.0" height="35.0"/>
+      </element>
+      <element uuid="72c96a84-0ca5-431b-882a-21b6811559d3" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>engine</seg>
+        </bo>
+        <position x="12.0" y="38.0"/>
+        <size width="104.0" height="35.0"/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>software_i</seg>
+      </bo>
+      <position x="500.0" y="340.0"/>
+      <size width="202.0" height="195.0"/>
+    </element>
+    <element uuid="06c481b5-8134-4986-9b32-4dd608511ace" manual="true">
+      <element uuid="59fd6187-c5d5-4a85-8a1d-31c46bc3b5d4" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>deployment_properties::actual_processor_binding</seg>
+          <seg>f58d0e2b-7ddc-4177-9fc5-b7825f1d38d0</seg>
+        </bo>
+        <bendpoints>
+          <point x="197.0" y="168.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="d1f76061-f0ec-4050-bb54-4e80debbb3b5" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>az_filter</seg>
+        </bo>
+        <position x="12.0" y="258.0"/>
+        <size width="112.0" height="35.0"/>
+      </element>
+      <element uuid="f8e91dfe-1565-4e8a-8571-d9aa947acb71" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>h_filter</seg>
+        </bo>
+        <position x="12.0" y="93.0"/>
+        <size width="105.0" height="35.0"/>
+      </element>
+      <element uuid="7e79c777-82d3-4199-8e1d-d1e7bbccce00" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>q_filter</seg>
+        </bo>
+        <position x="12.0" y="38.0"/>
+        <size width="105.0" height="35.0"/>
+      </element>
+      <element uuid="9fd56e1a-cdcb-4c3e-859e-6ac3030cede4" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>va_filter</seg>
+        </bo>
+        <position x="12.0" y="148.0"/>
+        <size width="110.0" height="35.0"/>
+      </element>
+      <element uuid="eefb3999-383e-4fe3-b700-f3a0e5b9a1ae" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>vz_filter</seg>
+        </bo>
+        <position x="12.0" y="203.0"/>
+        <size width="111.0" height="35.0"/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>software_ii</seg>
+      </bo>
+      <position x="12.0" y="329.0"/>
+      <size width="136.0" height="305.0"/>
+    </element>
+    <element uuid="3f0fda3f-6ddf-41d2-bd2b-13a84b398ab7" manual="true">
+      <element uuid="bc4c7971-bce8-40fd-83cc-4ba73e957b13" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>deployment_properties::actual_processor_binding</seg>
+          <seg>aad576d2-690e-4797-a94c-0bc9f564772b</seg>
+        </bo>
+        <bendpoints>
+          <point x="428.0" y="221.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="a5f01ed6-a67c-4f30-83af-2965c29dbec9" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>altitude_hold</seg>
+        </bo>
+        <position x="12.0" y="148.0"/>
+        <size width="144.0" height="35.0"/>
+      </element>
+      <element uuid="d8f95333-8647-4670-a301-c54cd3f1d5b2" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>va_control</seg>
+        </bo>
+        <position x="12.0" y="38.0"/>
+        <size width="126.0" height="35.0"/>
+      </element>
+      <element uuid="f7f9b3a5-8396-4807-aa6b-4b9958f8d194" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>vz_control</seg>
+        </bo>
+        <position x="12.0" y="93.0"/>
+        <size width="127.0" height="35.0"/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>software_iii</seg>
+      </bo>
+      <position x="250.0" y="340.0"/>
+      <size width="168.0" height="195.0"/>
+    </element>
+    <element uuid="31cc5e03-0346-4b70-a691-05a7c1bdb0bb" manual="true">
+      <element uuid="8b1f8f9c-fe1e-44c0-94ee-783c80efa682" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>deployment_properties::actual_processor_binding</seg>
+          <seg>b3c061a1-0eca-4050-8492-91d4bc54c997</seg>
+        </bo>
+        <bendpoints>
+          <point x="129.0" y="280.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="0c2cf1e7-30af-48ab-a327-22cc7ae3da8f" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>monitoring</seg>
+        </bo>
+        <position x="12.0" y="38.0"/>
+        <size width="129.0" height="35.0"/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>software_iv</seg>
+      </bo>
+      <position x="12.0" y="59.0"/>
+      <size width="153.0" height="85.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>rosace_system.others</seg>
+    </bo>
+    <position x="50.0"/>
+    <size width="900.0" height="646.0"/>
+  </element>
+  <config type="processorBinding" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties>
+      <property>deployment_properties::actual_processor_binding</property>
+    </enabledAadlProperties>
+    <context>
+      <seg>classifier</seg>
+      <seg>lab8::rosace_system.others</seg>
+    </context>
+  </config>
+</diagram:Diagram>

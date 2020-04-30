@@ -1,0 +1,632 @@
+PACKAGE lab8
+
+PUBLIC
+
+ 
+
+DATA flt_data
+
+properties
+
+       Data_Size => 64 bits;
+
+END flt_data;
+
+ 
+
+SYSTEM Rosace_System
+
+END Rosace_System;
+
+ 
+
+SYSTEM IMPLEMENTATION Rosace_System.others
+
+	SUBCOMPONENTS
+
+		software_I: PROCESS Flight_Environment.impl;
+
+		software_II: PROCESS Flight_Software_I.impl;
+
+		software_III: PROCESS Flight_Software_II.impl;
+
+		software_IV: PROCESS Monitoring_process.impl;
+
+		hardware: SYSTEM hardware.impl;
+
+	connections
+		Rosace_System_others_new_connection: port software_III.Delta_Th_C -> software_I.Delta_Th_C;
+
+		Rosace_System_others_new_connection2: port software_III.Delta_E_C -> software_I.Delta_E_C;
+		Rosace_System_others_new_connection3: feature group software_I.fg -> software_II.fg;
+		Rosace_System_others_new_connection4: port software_II.H_1 -> software_III.H_1;
+		Rosace_System_others_new_connection5: port software_II.Az_1 -> software_III.Az_1;
+		Rosace_System_others_new_connection6: port software_II.Q_1 -> software_III.Q_1;
+		Rosace_System_others_new_connection7: port software_II.Va_1 -> software_III.Va_1;
+		Rosace_System_others_new_connection8: port software_II.Vz_1 -> software_III.Vz_1;
+	properties
+		Actual_Processor_Binding => (reference (Hardware.cpu1)) applies to Software_I;
+
+		-- Processor #2 binding and priorities
+		Actual_Processor_Binding => (reference (Hardware.cpu2)) applies to Software_II;
+
+		-- Processor #3 binding and priorities
+		Actual_Processor_Binding => (reference (Hardware.cpu3)) applies to Software_III;
+
+		-- Processor #4 binding and priorities
+		Actual_Processor_Binding => (reference (Hardware.cpu4)) applies to Software_IV;
+		
+	   Priority => 10 applies to Software_II.H_filter;
+
+       Priority => 09 applies to Software_II.Az_filter;
+
+       Priority => 08 applies to Software_II.Vz_filter;
+
+       Priority => 07 applies to Software_II.Q_filter;
+
+       Priority => 06 applies to Software_II.Va_filter;
+       
+       Priority => 10 applies to Software_III.Altitude_Hold;
+
+       Priority => 05 applies to Software_III.Vz_Control;
+
+       Priority => 04 applies to Software_III.Va_Control;
+
+END Rosace_System.others;
+
+ 
+
+PROCESS Monitoring_process
+
+end Monitoring_process;
+
+ 
+
+PROCESS IMPLEMENTATION Monitoring_process.impl
+
+SUBCOMPONENTS
+
+  monitoring: THREAD monitoring.impl;
+
+end Monitoring_process.impl;
+
+ 
+
+FEATURE GROUP fg
+
+FEATURES
+
+  Vz : OUT DATA PORT flt_data;
+
+  Q : OUT DATA PORT flt_data;
+
+  Az : OUT DATA PORT flt_data;
+
+  H : OUT DATA PORT flt_data;
+
+  Va : OUT DATA PORT flt_data;
+
+END fg;
+
+ 
+
+PROCESS Flight_Environment
+
+FEATURES
+
+  Delta_E_C : IN DATA PORT flt_data;
+
+  Delta_Th_C : IN DATA PORT flt_data;
+
+  fg : FEATURE GROUP fg;
+
+END Flight_Environment;
+
+ 
+
+PROCESS IMPLEMENTATION Flight_Environment.impl
+
+SUBCOMPONENTS
+
+  Engine : THREAD Engine_T.impl;
+
+  Elevator : THREAD Elevator_T.impl;
+
+  Aircraft_Dynamics : THREAD Aircraft_Dynamics_T.impl;
+
+CONNECTIONS
+
+  c1 : PORT Delta_E_C -> Elevator.Delta_E_C; -- korekta kodu 29-04.2020 18:49
+
+  c2 : PORT Delta_Th_C -> Engine.Delta_Th_C; -- korekta kodu 29-04.2020 18:49
+
+  c3 : FEATURE GROUP fg <-> Aircraft_Dynamics.fg;
+
+  c4 : PORT Engine.Output -> Aircraft_Dynamics.T;
+
+  c5 : PORT Elevator.Output -> Aircraft_Dynamics.Delta_E;
+
+END Flight_Environment.impl;
+
+ 
+
+THREAD Engine_T
+
+FEATURES
+
+  Delta_Th_C : IN DATA PORT flt_data;
+
+  Output : OUT DATA PORT flt_data;
+
+END Engine_T;
+
+ 
+
+THREAD IMPLEMENTATION Engine_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 5000ms;
+
+END Engine_T.impl;
+
+ 
+
+THREAD Elevator_T
+
+FEATURES
+
+  Delta_E_C : IN DATA PORT flt_data;
+
+  Output : OUT DATA PORT flt_data;
+
+END Elevator_T;
+
+ 
+
+THREAD IMPLEMENTATION Elevator_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 5000ms;
+
+END Elevator_T.impl;
+
+ 
+
+THREAD Aircraft_Dynamics_T
+
+FEATURES
+
+  Delta_E : IN DATA PORT flt_data;
+
+  T : IN DATA PORT flt_data;
+
+  fg : FEATURE GROUP fg;
+
+END Aircraft_Dynamics_T;
+
+ 
+
+THREAD IMPLEMENTATION Aircraft_Dynamics_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 200ms;
+
+  Period => 5000ms;
+
+END Aircraft_Dynamics_T.impl;
+
+ 
+
+PROCESS Flight_Software_I
+
+	FEATURES
+
+		fg: FEATURE GROUP INVERSE OF fg;
+
+		Az_1: out data port;
+		Q_1: out data port;
+		Va_1: out data port;
+		H_1: out data port;
+		Vz_1: out data port;
+end Flight_Software_I;
+
+ 
+
+PROCESS IMPLEMENTATION Flight_Software_I.impl
+
+	SUBCOMPONENTS
+
+		H_filter: THREAD H_Filter_T.impl;
+
+		Az_filter: THREAD Az_Filter_T.impl;
+
+		Vz_filter: THREAD Vz_Filter_T.impl;
+
+		Q_filter: THREAD Q_Filter_T.impl;
+
+		Va_filter: THREAD Va_Filter_T.impl;
+
+	connections
+		Flight_Software_I_impl_new_connection: port fg.Az -> Az_filter.Az;
+		Flight_Software_I_impl_new_connection2: port fg.Vz -> Vz_filter.Vz;
+		Flight_Software_I_impl_new_connection3: port fg.H -> H_filter.H;
+		Flight_Software_I_impl_new_connection4: port fg.Va -> Va_filter.Va;
+		Flight_Software_I_impl_new_connection5: port fg.Q -> Q_filter.Q;
+		Flight_Software_I_impl_new_connection6: port H_filter.Output -> H_1;
+		Flight_Software_I_impl_new_connection7: port Vz_filter.Output -> Vz_1;
+		Flight_Software_I_impl_new_connection8: port Va_filter.Output -> Va_1;
+		Flight_Software_I_impl_new_connection9: port Q_filter.Output -> Q_1;
+		Flight_Software_I_impl_new_connection10: port Az_filter.Output -> Az_1;
+end Flight_Software_I.impl;
+
+ 
+
+PROCESS Flight_Software_II
+
+	FEATURES
+
+		Delta_E_C: OUT DATA PORT flt_data;
+
+		Delta_Th_C: OUT DATA PORT flt_data;
+
+		Az_1: in data port;
+		Q_1: in data port;
+		Va_1: in data port;
+		H_1: in data port;
+		Vz_1: in data port;
+
+end Flight_Software_II;
+
+ 
+
+ 
+
+PROCESS IMPLEMENTATION Flight_Software_II.impl
+
+	SUBCOMPONENTS
+
+		Altitude_hold: THREAD Altitude_Hold_T.impl;
+
+		Vz_control: THREAD Vz_control_T.impl;
+
+		Va_control: THREAD Va_control_T.impl;
+
+	connections
+		Flight_Software_II_impl_new_connection: port Vz_control.Output -> Delta_E_C;
+		Flight_Software_II_impl_new_connection2: port Va_control.Output -> Delta_Th_C;
+		Flight_Software_II_impl_new_connection3: port Altitude_hold.Output -> Vz_control.Vz_c;
+		Flight_Software_II_impl_new_connection4: port Az_1 -> Vz_control.Az_f;
+		Flight_Software_II_impl_new_connection5: port Q_1 -> Vz_control.Q_f;
+		Flight_Software_II_impl_new_connection6: port Va_1 -> Va_control.Va_f;
+		Flight_Software_II_impl_new_connection7: port H_1 -> Altitude_hold.H_f;
+		Flight_Software_II_impl_new_connection8: port Vz_1 -> Vz_control.Vz_f;
+		Flight_Software_II_impl_new_connection9: port Vz_1 -> Va_control.Vz_f;
+		Flight_Software_II_impl_new_connection10: port Q_1 -> Va_control.Q_f;
+end Flight_Software_II.impl;
+
+ 
+
+THREAD H_Filter_T
+
+FEATURES
+
+  H : IN DATA PORT flt_data;
+
+  Output : OUT DATA PORT flt_data;
+  
+--  Az_1 : OUT DATA PORT flt_data;
+
+END H_Filter_T;
+
+ 
+
+THREAD IMPLEMENTATION H_Filter_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 10000ms;
+
+END H_Filter_T.impl;
+
+ 
+
+THREAD Az_Filter_T
+
+FEATURES
+
+  Az : IN DATA PORT flt_data;
+
+  Output : OUT DATA PORT flt_data;
+
+END Az_Filter_T;
+
+ 
+
+THREAD IMPLEMENTATION Az_Filter_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 10000ms;
+
+END Az_Filter_T.impl;
+
+ 
+
+THREAD Vz_Filter_T
+
+FEATURES
+
+  Vz : IN DATA PORT flt_data;
+
+  Output : OUT DATA PORT flt_data;
+
+END Vz_Filter_T;
+
+ 
+
+THREAD IMPLEMENTATION Vz_Filter_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 10000ms;
+
+END Vz_Filter_T.impl;
+
+ 
+
+THREAD Q_Filter_T
+
+FEATURES
+
+  Q : IN DATA PORT flt_data;
+
+  Output : OUT DATA PORT flt_data;
+
+END Q_Filter_T;
+
+ 
+
+THREAD IMPLEMENTATION Q_Filter_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 10000ms;
+
+END Q_Filter_T.impl;
+
+ 
+
+THREAD Va_Filter_T
+
+FEATURES
+
+  Va : IN DATA PORT flt_data;
+
+  Output : OUT DATA PORT flt_data;
+
+END Va_Filter_T;
+
+ 
+
+THREAD IMPLEMENTATION Va_Filter_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 10000ms;
+
+  --Deadline => 200ms;
+
+  --Priority => 3;
+
+END Va_Filter_T.impl;
+
+ 
+
+THREAD Altitude_Hold_T
+
+FEATURES
+
+  H_c : IN DATA PORT flt_data;
+
+  H_f : IN DATA PORT flt_data;
+
+  Output : OUT DATA PORT flt_data;
+
+END Altitude_Hold_T;
+
+ 
+
+THREAD IMPLEMENTATION Altitude_Hold_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 20000ms;
+
+END Altitude_Hold_T.impl;
+
+ 
+
+THREAD Vz_control_T
+
+FEATURES
+
+  Output : OUT DATA PORT flt_data;
+
+  Vz_c : IN DATA PORT flt_data;
+
+  Az_f : IN DATA PORT flt_data;
+
+  Q_f : IN DATA PORT flt_data;
+
+  Vz_f : IN DATA PORT flt_data;
+
+END Vz_control_T;
+
+ 
+
+THREAD IMPLEMENTATION Vz_control_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 20000ms;
+
+END Vz_control_T.impl;
+
+ 
+
+THREAD Va_control_T
+
+FEATURES
+
+  Output : OUT DATA PORT flt_data;
+
+  Vz_f : IN DATA PORT flt_data;
+
+  Q_f : IN DATA PORT flt_data;
+
+  Va_f : IN DATA PORT flt_data;
+
+  Va_c : IN DATA PORT flt_data;
+
+END Va_control_T;
+
+ 
+
+THREAD IMPLEMENTATION Va_control_T.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 1ms .. 100ms;
+
+  Period => 20000ms;
+
+END Va_control_T.impl;
+
+ 
+
+THREAD monitoring
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 10ms .. 10ms;
+
+  Period => 10000 ms;
+
+END monitoring;
+
+ 
+
+THREAD implementation monitoring.impl
+
+PROPERTIES
+
+  Dispatch_Protocol => Periodic;
+
+  Compute_Execution_Time => 10ms .. 10ms;
+
+  Period => 10000ms;
+
+END monitoring.impl;
+
+ 
+
+SYSTEM hardware
+
+END hardware;
+
+ 
+
+SYSTEM IMPLEMENTATION hardware.impl
+
+SUBCOMPONENTS
+
+  cpu1 : PROCESSOR CPU;
+
+  cpu2 : PROCESSOR CPU;
+
+  cpu3 : PROCESSOR CPU;
+
+  cpu4 : PROCESSOR CPU;
+
+PROPERTIES
+
+  Scheduling_Protocol => (POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL);
+
+END hardware.impl;
+
+ 
+
+PROCESSOR CPU
+
+-- Scheduling_Protocol można umieścić również wewnątrz procesora
+
+--PROPERTIES --modified
+
+  --Scheduling_Protocol => (POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL); --modified
+
+END CPU;
+
+ 
+
+device Generator --modified
+
+features --modified
+
+  signal_out: out data port flt_data; --modified
+
+properties  --modified
+
+  dispatch_protocol => periodic; --modified
+
+  period => 100000ms; --modified
+
+end Generator; --modified
+
+ 
+
+END lab8;
