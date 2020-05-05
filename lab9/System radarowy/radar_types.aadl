@@ -1,0 +1,29 @@
+PACKAGE radar_types
+PUBLIC
+	with data_model;
+	
+	-- Określa położenie kątowe silnika w zakresie 0 .. 359
+	DATA Motor_Position
+		PROPERTIES
+			Data_Model::Data_Representation => integer;
+	END Motor_Position;
+	
+	-- Określa odległość echa celu od impulsu radaru
+	DATA Target_Distance
+		PROPERTIES
+			Data_Model::Data_Representation => integer;
+	END Target_Distance;
+	
+	-- Określa dokładną pozycję celu we współrzędnych biegunowych
+	DATA Target_Position
+	END Target_Position;
+
+	DATA IMPLEMENTATION Target_Position.impl
+		SUBCOMPONENTS
+			theta: DATA radar_types::Motor_Position;
+			rho: DATA radar_types::Target_Distance;
+		PROPERTIES
+			Data_Model::Data_Representation => struct;
+	END Target_Position.impl;
+
+END radar_types;
