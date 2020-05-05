@@ -1,7 +1,7 @@
 package radar_system
 public
 	with radar_types;
-	with cheddar_properties;
+--	with cheddar_properties;
 	with deployment;
 
 	SYSTEM radar
@@ -116,7 +116,7 @@ public
 			A18: PARAMETER RS.receiver_out -> receiver_out;
 			A19: PARAMETER receiver_in -> RS.receiver_in;
 		PROPERTIES
-			Cheddar_Properties::Fixed_Priority => 63;
+--			Cheddar_Properties::Fixed_Priority => 63;
 			Dispatch_Protocol => Periodic;
 			Compute_Execution_Time => 10ms .. 20ms;
 			Deadline => 150ms;
@@ -152,7 +152,7 @@ public
 			A21: PARAMETER AS.analyser_out -> analyser_out;
 			A22: PARAMETER from_controller -> AS.from_controller;
 		PROPERTIES
-			Cheddar_Properties::Fixed_Priority => 62;
+--			Cheddar_Properties::Fixed_Priority => 62;
 			Dispatch_Protocol => Periodic;
 			Compute_Execution_Time => 40ms .. 60ms;
 			Deadline => 500ms;
@@ -184,7 +184,7 @@ public
 		CONNECTIONS
 			A23: PARAMETER display_in -> DS.display_in;
 		PROPERTIES
-			Cheddar_Properties::Fixed_Priority => 60;
+--			Cheddar_Properties::Fixed_Priority => 60;
 			Dispatch_Protocol => Periodic;
 			Compute_Execution_Time => 10ms .. 30ms;
 			Deadline => 200ms;
@@ -207,7 +207,7 @@ public
 
 	THREAD IMPLEMENTATION transmitter.impl
 		PROPERTIES
-			Cheddar_Properties::Fixed_Priority => 71;
+--			Cheddar_Properties::Fixed_Priority => 71;
 			Dispatch_Protocol => Periodic;
 			Compute_Execution_Time => 10ms .. 10ms;
 			Compute_Entrypoint_Source_Text => "radar.transmitter";
@@ -230,7 +230,7 @@ public
 			A24: PARAMETER controller_in -> CS.controller_in;
 			A25: PARAMETER CS.controller_out -> controller_out;
 		PROPERTIES
-			Cheddar_Properties::Fixed_Priority => 70;
+--			Cheddar_Properties::Fixed_Priority => 70;
 			Dispatch_Protocol => Periodic;
 			Compute_Execution_Time => 10ms .. 10ms;
 			Deadline => 150ms;
