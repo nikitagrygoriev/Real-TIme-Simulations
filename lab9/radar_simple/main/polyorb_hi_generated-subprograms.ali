@@ -1,0 +1,71 @@
+V "GNAT Lib v7"
+A -O1
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatA
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+
+U polyorb_hi_generated.subprograms%b  polyorb_hi_generated-subprograms.adb  1a9344f4 NE OO PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W radar%s		radar.adb		radar.ali
+
+U polyorb_hi_generated.subprograms%s  polyorb_hi_generated-subprograms.ads  f320fde3 EE NE OO PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-deployment.ads  20200511102703 de6e4d98 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-subprograms.ads  20200511102703 8ab470d8 polyorb_hi_generated.subprograms%s
+D polyorb_hi_generated-subprograms.adb  20200511102703 0ac3bf7b polyorb_hi_generated.subprograms%b
+D polyorb_hi_generated-types.ads  20200511102703 4b36a0ac polyorb_hi_generated.types%s
+D radar.ads		20200504094920 9ae48b57 radar%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 3|9r6 11r9 14r24 15r19 18r21 19r24 20r23
+. 23r18 26r21 27r26 29r5 4|11r14 14r24 15r19 19r21 20r24 21r23 25r18 29r21
+. 30r26 33r5
+X 3 polyorb_hi_generated-subprograms.ads
+11K30*Subprograms 1|34k9 3|29l26 29e37 4|11b35 33l26 33t37
+13U13*radar_system_Receiver_Spg 14<5 15>5 4|13b13
+14i5 receiver_out{5|12I8} 4|14b5
+15i5 receiver_in{5|12I8} 4|15b5
+17U13*radar_system_Analyser_Spg 18>5 19<5 20>5 4|18b13
+18i5 from_receiver{5|12I8} 4|19b5
+19r5 analyser_out{5|28R8} 4|20b5
+20i5 from_controller{5|20I8} 4|21b5
+22U13*radar_system_Display_Spg 23>5 4|24b13
+23r5 display_in{5|28R8} 4|25b5
+25U13*radar_system_Controller_Spg 26>5 27<5 4|28b13
+26i5 controller_in{5|20I8} 4|29b5
+27i5 controller_out{5|20I8} 4|30b5
+X 5 polyorb_hi_generated-types.ads
+10K30*Types 3|9w27 14r45 15r40 18r42 19r45 20r44 23r39 26r42 27r47 4|14r45
+. 15r40 19r42 20r45 21r44 25r39 29r42 30r47 5|42e31
+12I8*Target_Distance<integer> 3|14r51 15r46 18r48 4|14r51 15r46 19r48
+20I8*Motor_Position<integer> 3|20r50 26r48 27r53 4|21r50 29r48 30r53
+28R8*Target_Position_impl 3|19r51 23r45 4|20r51 25r45 5|32e15
+X 6 radar.ads
+35K9*Radar 4|9w6 16r12 22r12 26r12 31r12 6|57e10
+40U14*Analyser 4|22r18
+45U14*Receiver 4|16r18
+49U14*Controller 4|31r18
+55U14*Display_Panel 4|26r18
+

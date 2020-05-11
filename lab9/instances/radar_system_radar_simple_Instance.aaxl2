@@ -282,7 +282,7 @@
         <propertyAssociation href="../radar_system.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedPropertyAssociation.4"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-        <property href="platform:/plugin/cheddar-osate2-properties/resources/properties/Cheddar/Cheddar_Properties.aadl#Cheddar_Properties.Fixed_Priority"/>
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Priority"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:IntegerLiteral" value="63"/>
         </ownedValue>
@@ -395,7 +395,7 @@
         <propertyAssociation href="../radar_system.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.4"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-        <property href="platform:/plugin/cheddar-osate2-properties/resources/properties/Cheddar/Cheddar_Properties.aadl#Cheddar_Properties.Fixed_Priority"/>
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Priority"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:IntegerLiteral" value="62"/>
         </ownedValue>
@@ -532,7 +532,7 @@
         <propertyAssociation href="../radar_system.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedPropertyAssociation.4"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-        <property href="platform:/plugin/cheddar-osate2-properties/resources/properties/Cheddar/Cheddar_Properties.aadl#Cheddar_Properties.Fixed_Priority"/>
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Priority"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:IntegerLiteral" value="60"/>
         </ownedValue>
@@ -627,7 +627,7 @@
         <propertyAssociation href="../radar_system.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPropertyAssociation.5"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-        <property href="platform:/plugin/cheddar-osate2-properties/resources/properties/Cheddar/Cheddar_Properties.aadl#Cheddar_Properties.Fixed_Priority"/>
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Priority"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:IntegerLiteral" value="71"/>
         </ownedValue>
@@ -708,7 +708,7 @@
         <propertyAssociation href="../radar_system.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedPropertyAssociation.4"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-        <property href="platform:/plugin/cheddar-osate2-properties/resources/properties/Cheddar/Cheddar_Properties.aadl#Cheddar_Properties.Fixed_Priority"/>
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Priority"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:IntegerLiteral" value="70"/>
         </ownedValue>
@@ -818,7 +818,7 @@
       <property href="platform:/plugin/org.osate.ocarina.aadlcontribution/resources/properties/deployment.aadl#Deployment.Execution_Platform"/>
       <ownedValue>
         <ownedValue xsi:type="aadl2:NamedValue">
-          <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.ocarina.aadlcontribution/resources/properties/deployment.aadl#/0/@ownedPropertyType.2/@ownedLiteral.4"/>
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.ocarina.aadlcontribution/resources/properties/deployment.aadl#/0/@ownedPropertyType.2/@ownedLiteral.0"/>
         </ownedValue>
       </ownedValue>
       <propertyAssociation href="../radar_system.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedPropertyAssociation.2"/>

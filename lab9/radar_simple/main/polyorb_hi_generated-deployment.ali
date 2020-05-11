@@ -1,0 +1,81 @@
+V "GNAT Lib v7"
+A -O1
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatA
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  eccc600f NE OO PR PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-deployment.ads  20200511102703 de6e4d98 polyorb_hi_generated.deployment%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 2|10r9 225r12 265r5
+X 2 polyorb_hi_generated-deployment.ads
+10K30*Deployment 1|34k9 2|225r33 265l26 265e36
+16E8*Node_Type 17e12 21r7 27r7 37r4 37r20 37r39 55r22 92r9
+17n5*main_K{16E8} 22r5 52r7 56r4 97r8 99r8 101r8 103r8 105r8
+29i3*Max_Node_Image_Size{integer} 40r23
+36E11*UT_Deployment_Main_Node_Type_Range{16E8} 47r11
+39I11*UT_Deployment_Main_1_Max_Node_Image_Size{integer} 44r7
+42A11*UT_Deployment_Main_Node_Image_Component{string}<integer> 48r9
+46A8*UT_Deployment_Main_Node_Image_Array(42A11)<16E8> 50r25 51r4
+50a3*Node_Image{46A8}
+55e3*My_Node{16E8}
+60E8*Entity_Type 65e26 69r7 83r7 88r4 88r22 88r43 191r9
+61n5*main_receive_K{60E8} 70r5 96r7 127r7 196r8 198r8
+62n5*main_analyse_K{60E8} 72r5 98r7 129r7 200r8 202r8 204r8 206r8
+63n5*main_display_K{60E8} 74r5 100r7 131r7 208r8 210r8
+64n5*main_transmit_K{60E8} 76r5 102r7 133r7 212r8
+65n5*main_control_angle_K{60E8} 78r5 104r7 135r7 214r8 216r8
+87E11*UT_Deployment_Main_Entity_Type_Range{60E8} 91r11 122r11
+90A8*UT_Deployment_Main_Entity_Table_Array(16E8)<60E8> 94r27 95r4
+94a3*Entity_Table{90A8}
+107i3*Max_Entity_Image_Size{integer} 115r23
+114I11*UT_Deployment_Main_1_Max_Entity_Image_Size{integer} 119r7
+117A11*UT_Deployment_Main_Entity_Image_Component{string}<integer> 123r9
+121A8*UT_Deployment_Main_Entity_Image_Array(117A11)<60E8> 125r27 126r4
+125a3*Entity_Image{121A8}
+141E8*Port_Type 152e41 156r7 182r7 187r4 187r20 187r39
+142n5*main_receive_receiver_out_K{141E8} 157r5 195r7 235r7
+143n5*main_receive_receiver_in_K{141E8} 159r5 197r7 237r7
+144n5*main_analyse_from_transmitter_K{141E8} 161r5 199r7 239r7
+145n5*main_analyse_from_receiver_K{141E8} 163r5 201r7 241r7
+146n5*main_analyse_analyser_out_K{141E8} 165r5 203r7 243r7
+147n5*main_analyse_from_controller_K{141E8} 167r5 205r7 245r7
+148n5*main_display_display_in_K{141E8} 169r5 207r7 247r7
+149n5*main_display_display_out_K{141E8} 171r5 209r7 249r7
+150n5*main_transmit_transmitter_out_K{141E8} 173r5 211r7 251r7
+151n5*main_control_angle_controller_in_K{141E8} 175r5 213r7 253r7
+152n5*main_control_angle_controller_out_K{141E8} 177r5 215r7 255r7
+186E11*UT_Deployment_Main_Port_Type_Range{141E8} 190r11 230r11
+189A8*UT_Deployment_Main_Port_Table_Array(60E8)<141E8> 193r25 194r4
+193a3*Port_Table{189A8}
+218i3*Max_Port_Image_Size{integer} 225r44
+223A11*Port_Sized_String{string}<integer> 231r9
+229A8*UT_Deployment_Main_Port_Image_Array(223A11)<141E8> 233r25 234r4
+233a3*Port_Image{229A8}
+260i3*Max_Payload_Size{integer}
+

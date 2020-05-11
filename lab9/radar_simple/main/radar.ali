@@ -1,0 +1,87 @@
+V "GNAT Lib v7"
+A -O1
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatA
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U radar%b		radar.adb		fa661243 NE OO PK
+W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
+W polyorb_hi.output%s	polyorb_hi-output.adb	polyorb_hi-output.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+
+U radar%s		radar.ads		0fbc6663 EE NE OO PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyorb_hi_generated-deployment.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+
+D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
+D polyorb_hi-output.ads	20170204221544 c612b385 polyorb_hi.output%s
+D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-deployment.ads  20200511102703 de6e4d98 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-types.ads  20200511102703 4b36a0ac polyorb_hi_generated.types%s
+D radar.ads		20200504094920 9ae48b57 radar%s
+D radar.adb		20200504094920 a6902a91 radar%b
+D system.ads		20170510173650 4635ec04 system%s
+D s-imgint.ads		20090409150019 02dbe0c2 system.img_int%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi.ads
+35K9*PolyORB_HI 39e15 8|32r6 36r8
+X 2 polyorb_hi-output.ads
+38K20*Output 82e22 8|32w17 36r19
+63U14*Put_Line 8|58s7 74s7 87s7 102s7 111s7
+X 4 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 7|32r6 33r6 37r8 38r8
+X 5 polyorb_hi_generated-deployment.ads
+10K30*Deployment 265e36 7|32w27 37r29
+60E8*Entity_Type 65e26 7|53r36 8|99r36
+X 6 polyorb_hi_generated-types.ads
+10K30*Types 42e31 7|33w27 38r29
+12I8*Target_Distance<integer> 7|41r23 46r26 47r21 8|52r26 53r21 59r19 83r23
+. 88r21 112r21
+20I8*Motor_Position<integer> 7|43r25 50r23 51r28 8|68r23 69r28 75r21 85r25
+. 90r21 113r21
+28R8*Target_Position_impl 32e15 7|42r26 55r42 8|42r9 84r26 109r42
+30i7*theta{20I8} 8|73r53 92m20 113r54
+31i7*rho{12I8} 8|57r51 91m20 112r55
+X 7 radar.ads
+35K9*Radar 57l5 57e10 8|34b14 116l5 116t10
+40U14*Analyser 41>7 42<7 43>7 8|82b14 93l8 93t16
+41i7 From_Receiver{6|12I8} 8|83b7 88r44 91r27
+42r7 Analyser_Out{6|28R8} 8|84b7 91m7 92m7
+43i7 From_Controller{6|20I8} 8|85b7 90r43 92r29
+45U14*Receiver 46<7 47>7 8|51b14 61l8 61t16
+46i7 Receiver_Out{6|12I8} 8|52b7 57m7 59r42
+47i7 Receiver_In{6|12I8} 8|53b7 55r28
+49U14*Controller 50>7 51<7 8|67b14 76l8 76t18
+50i7 Controller_In{6|20I8} 8|68b7 71r28
+51i7 Controller_Out{6|20I8} 8|69b7 73m7 75r43
+53U14*Transmitter 53>27 8|99b14 103l8 103t19
+53e27 Entity{5|60E8} 8|99b27 100r28
+55U14*Display_Panel 55>29 8|109b14 114l8 114t21
+55r29 Display_In{6|28R8} 8|109b29 112r44 113r43
+X 8 radar.adb
+38M9 Fake_Position_Index 41r37 45r17
+41a4 Fake_Positions(6|28R8) 57r23 73r25
+45m4 Fake_Index{38M9} 57r39 60m7 60r21 73r41
+

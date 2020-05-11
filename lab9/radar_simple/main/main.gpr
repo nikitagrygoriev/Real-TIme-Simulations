@@ -7,7 +7,7 @@
 
 --  Application name   : radar_simple
 --  Node name          : main
---  Execution platform : PLATFORM_LEON_ORK
+--  Execution platform : PLATFORM_NATIVE
 --  Transport API      : TRANSPORT_NONE
 
 with "/opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/polyorb_hi";
@@ -16,7 +16,7 @@ project main is
   for Source_Dirs use
    (".",
     "/opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada",
-    "/home/fw2ty/Desktop/workspace/lab9/System radarowy/") & external_as_list("ADA_INCLUDE_PATH", ":");
+    "/home/fw2ty/Desktop/workspace/lab9/") & external_as_list("ADA_INCLUDE_PATH", ":");
 
   for Main use ("main.adb");
 
@@ -24,7 +24,7 @@ project main is
 
     --  Custom middleware file names
 
-    for Body ("PolyORB_HI.Output_Low_Level") use "polyorb_hi-output_low_level_leon.adb";
+    for Body ("PolyORB_HI.Output_Low_Level") use "polyorb_hi-output_low_level_native.adb";
 
   end Naming;
 

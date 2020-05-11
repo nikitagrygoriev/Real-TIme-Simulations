@@ -1,0 +1,44 @@
+V "GNAT Lib v7"
+A -O1
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatA
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  79948d3b NE OO PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-types.ads  20200511102703 4b36a0ac polyorb_hi_generated.types%s
+D system.ads		20170510173650 4635ec04 system%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 2|10r9 30r15 31r13 42r5
+X 2 polyorb_hi_generated-types.ads
+10K30*Types 1|34k9 2|30r36 31r34 42l26 42e31
+12I8*Target_Distance<integer> 17r44 31r40
+17i3*Target_Distance_Default_Value{12I8}
+20I8*Motor_Position<integer> 25r43 30r42
+25i3*Motor_Position_Default_Value{20I8}
+28R8*Target_Position_impl 32e15 36r7 38r49
+30i7*theta{20I8} 39m5
+31i7*rho{12I8} 40m5
+38r3*Target_Position_impl_Default_Value{28R8}
+

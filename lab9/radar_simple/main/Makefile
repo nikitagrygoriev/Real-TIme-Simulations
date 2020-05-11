@@ -7,15 +7,15 @@
 
 #  Distributed application name : radar_simple
 #  Node name                    : main
-#  Execution platform           : leon_ork
+#  Execution platform           : native
 #  Transport API                : TRANSPORT_NONE
 
 C_OBJECTS=
 
-GNATMAKE = sparc-elf-gnatmake
-GNAT = sparc-elf-gnat
-CC = sparc-elf-gcc
-TARGET = LEON_ORK
+GNATMAKE = gnatmake
+GNAT = gnat
+CC = gcc
+TARGET = NATIVE
 BUILD = Debug
 CGCTRL = No
 PROJECT_FILE = main.gpr
