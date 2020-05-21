@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="57ccdd55-cd69-4f1c-b331-ec4b351d400a" manual="true">
+    <element uuid="c0e26d89-a3e3-4b9c-bb61-76c5bf8355e4" manual="true">
+      <bo>
+        <seg>realization</seg>
+      </bo>
+    </element>
+    <element uuid="ec97b944-44d5-4ab9-aaa3-e4ff34b8f6bb" manual="true">
+      <element uuid="f34300bf-b8c2-46dc-b721-f1dba5c96090" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cpu_a</seg>
+      </bo>
+      <position x="1664.0" y="184.0"/>
+      <size width="153.0" height="52.0"/>
+    </element>
+    <element uuid="449d5d4c-3a73-41c0-a1dd-3e68b573a911" manual="true">
+      <element uuid="72b6bffc-5728-42d1-9529-60580b310ad6" manual="true">
+        <element uuid="e75db5af-32e8-410f-b7f6-534d4344b946" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>c0</seg>
+        </bo>
+      </element>
+      <element uuid="149f0fd1-18ae-4ce9-a70e-46dcfc8af653" manual="true">
+        <element uuid="e5ba2a74-7989-4c11-9405-4cf97330c587" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>c1</seg>
+        </bo>
+      </element>
+      <element uuid="53ee99ba-7805-4ee7-8ea9-5831707eb4fb" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>deployment_properties::actual_processor_binding</seg>
+          <seg>ec97b944-44d5-4ab9-aaa3-e4ff34b8f6bb</seg>
+        </bo>
+        <bendpoints>
+          <point x="1660.0" y="222.0"/>
+          <point x="1672.0" y="222.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="649ecfa3-e3ee-472d-9c4d-76944d1fffd4" manual="true">
+        <element uuid="e50a71c0-ec29-4432-993f-650ac61db561" manual="true">
+          <element uuid="9bc463da-7da7-40cb-8252-680e4786eb6c" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>c0</seg>
+          </bo>
+        </element>
+        <element uuid="cac53bdd-99ac-4f97-9df7-3536f47c0755" manual="true">
+          <element uuid="e5841572-a1ea-40ba-847c-e2cc78208922" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>c1</seg>
+          </bo>
+        </element>
+        <element uuid="8b6a5061-0c5f-4477-bd6c-433e06c2f2a9" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>data_sink</seg>
+          </bo>
+          <position y="96.0"/>
+        </element>
+        <element uuid="759bb62d-2d18-44a2-ac64-134441ba90a0" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>data_source</seg>
+          </bo>
+          <position x="499.0" y="96.0"/>
+        </element>
+        <element uuid="a1bbc472-0129-47e4-bf65-b478ddda8762" manual="true">
+          <element uuid="5d9398e5-12ee-472a-8800-625c4d556f3e" manual="true">
+            <element uuid="a1ace662-dd61-4cb6-b321-b75e92efe992" manual="true" dockArea="left">
+              <bo>
+                <seg>feature</seg>
+                <seg>data_sink</seg>
+              </bo>
+              <position y="10.0"/>
+            </element>
+            <element uuid="5af35ce3-725e-4156-adb5-5b9c4e91f3d7" manual="true" dockArea="right">
+              <bo>
+                <seg>feature</seg>
+                <seg>data_source</seg>
+              </bo>
+              <position x="273.0" y="75.0"/>
+            </element>
+            <element uuid="47da629d-43f9-47e9-989b-c08f235ae9fa" manual="true">
+              <bo>
+                <seg>tag</seg>
+                <seg>spc_csp</seg>
+              </bo>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>q_spg</seg>
+            </bo>
+            <position x="12.0" y="38.0"/>
+            <size width="370.0" height="115.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>mycalls</seg>
+          </bo>
+          <position x="93.0" y="59.0"/>
+          <size width="394.0" height="160.0"/>
+        </element>
+        <element uuid="d9df7953-d132-4a81-b3d7-fe38f6d2f1d5" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>sc_type</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>computer</seg>
+        </bo>
+        <position x="539.0" y="59.0"/>
+        <size width="594.0" height="231.0"/>
+      </element>
+      <element uuid="e375c8c8-3ca1-4090-9ee0-725923cb2a23" manual="true">
+        <element uuid="a1a73fbe-85d7-4718-b2bf-86714f14958d" manual="true">
+          <element uuid="b1a6abb8-f11c-432c-bb2d-7434fa5f9928" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>c0</seg>
+          </bo>
+        </element>
+        <element uuid="68e13976-93ee-4089-a9db-a5443e4a2a96" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>data_sink</seg>
+          </bo>
+          <position y="71.0"/>
+        </element>
+        <element uuid="2aaf26ca-eb6d-4ae3-86b4-d7b91da6e951" manual="true">
+          <element uuid="3c20deac-833a-48ec-95fc-1c2b4d14b2df" manual="true">
+            <element uuid="2b9cae49-2b60-469f-ac6f-5031e9e80bb5" manual="true" dockArea="left">
+              <bo>
+                <seg>feature</seg>
+                <seg>data_sink</seg>
+              </bo>
+              <position y="10.0"/>
+            </element>
+            <element uuid="a7b03022-a197-440c-ab88-2897ee4df3ed" manual="true">
+              <bo>
+                <seg>tag</seg>
+                <seg>spc_csp</seg>
+              </bo>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>q_spg</seg>
+            </bo>
+            <position x="12.0" y="38.0"/>
+            <size width="338.0" height="60.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>mycalls</seg>
+          </bo>
+          <position x="93.0" y="59.0"/>
+          <size width="362.0" height="110.0"/>
+        </element>
+        <element uuid="d583c6cb-dd6a-48a4-be40-417598120b2e" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>sc_type</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>consumer</seg>
+        </bo>
+        <position x="1153.0" y="84.0"/>
+        <size width="467.0" height="181.0"/>
+      </element>
+      <element uuid="136e849d-ac2e-4b24-98f5-ef2312d2c911" manual="true">
+        <element uuid="70207c32-03eb-41bd-8b57-b3ec3f31efe7" manual="true">
+          <element uuid="0dc467c3-a2d2-4a1a-936c-5eecf30f7dc7" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>c0</seg>
+          </bo>
+          <bendpoints>
+            <point x="155.0" y="246.0"/>
+          </bendpoints>
+        </element>
+        <element uuid="c114a153-94e8-454d-84b3-75bc563f394c" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>data_source</seg>
+          </bo>
+          <position x="410.0" y="71.0"/>
+        </element>
+        <element uuid="93825d95-e54b-458b-a4c6-6287a7f23a78" manual="true">
+          <element uuid="1bf5ccb5-0fd5-4287-a861-a134032970ff" manual="true">
+            <element uuid="8ef6b773-6721-4799-8797-889e4d378092" manual="true" dockArea="left">
+              <bo>
+                <seg>feature</seg>
+                <seg>data_source</seg>
+              </bo>
+              <position y="10.0"/>
+            </element>
+            <element uuid="2995b088-a1be-4731-a8da-ef7aa097c7d3" manual="true">
+              <bo>
+                <seg>tag</seg>
+                <seg>spc_csp</seg>
+              </bo>
+            </element>
+            <bo>
+              <seg>subprogram_call</seg>
+              <seg>p_spg</seg>
+            </bo>
+            <position x="12.0" y="38.0"/>
+            <size width="362.0" height="60.0"/>
+          </element>
+          <bo>
+            <seg>subprogram_call_sequence</seg>
+            <seg>mycalls</seg>
+          </bo>
+          <position x="12.0" y="59.0"/>
+          <size width="386.0" height="110.0"/>
+        </element>
+        <element uuid="68674a3b-12ab-474b-98f8-a7579b5a325e" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>sc_type</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>producer</seg>
+        </bo>
+        <position x="12.0" y="84.0"/>
+        <size width="507.0" height="181.0"/>
+      </element>
+      <element uuid="029835d1-3fde-4c3a-9eba-03ef6bc2ec86" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>pr_a</seg>
+      </bo>
+      <position x="12.0" y="59.0"/>
+      <size width="1632.0" height="302.0"/>
+    </element>
+    <bo>
+      <seg>classifier</seg>
+      <seg>pc.multitasks</seg>
+    </bo>
+    <position x="12.0" y="12.0"/>
+    <size width="1829.0" height="373.0"/>
+  </element>
+  <config type="processorBinding" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties>
+      <property>deployment_properties::actual_processor_binding</property>
+    </enabledAadlProperties>
+    <context>
+      <seg>classifier</seg>
+      <seg>tasksync::pc.multitasks</seg>
+    </context>
+  </config>
+</diagram:Diagram>
