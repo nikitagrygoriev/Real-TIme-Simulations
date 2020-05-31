@@ -1,0 +1,290 @@
+package parking
+public
+	with radar_types;
+	with deployment;
+
+	SYSTEM park
+	END park;
+
+
+	SYSTEM IMPLEMENTATION park.simple
+	SUBCOMPONENTS
+		szlaban: DEVICE motor;
+		alert: DEVICE screen;
+		terminal: PROCESS processing.others;
+		cpu: PROCESSOR leon2;
+		VME: BUS VME;
+		RAM: MEMORY RAM;
+		kamera: device antenna;
+		fotokomorka: device antenna;
+		petla_ind: device antenna;
+		zegar: device antenna;
+	connections
+		A6: BUS ACCESS VME -> szlaban.VME;
+		A7: BUS ACCESS VME -> alert.VME;
+		A8: BUS ACCESS VME -> cpu.VME;
+		A9: BUS ACCESS VME -> RAM.VME;
+		park_simple_new_connection: bus access VME -> kamera.antenna_new_feature3;
+		park_simple_new_connection2: bus access VME -> fotokomorka.antenna_new_feature2;
+		park_simple_new_connection3: bus access VME -> petla_ind.antenna_new_feature;
+		park_simple_new_connection4: bus access VME -> zegar.antenna_new_feature4;
+		park_simple_new_connection5: feature zegar.antenna_new_feature6 -> terminal.processing_new_feature2;
+		park_simple_new_connection6: feature fotokomorka.antenna_new_feature5 -> terminal.processing_new_feature;
+		park_simple_new_connection7: feature terminal.processing_new_feature3 -> szlaban.motor_new_feature;
+		park_simple_new_connection9: feature kamera.antenna_new_feature9 -> zegar.antenna_new_feature8;
+		park_simple_new_connection10: feature terminal.processing_new_feature3 -> alert.screen_new_feature;
+		park_simple_new_connection8: feature terminal.processing_new_feature3 -> petla_ind.antenna_new_feature7;
+		park_simple_new_connection11: feature terminal.processing_new_feature4 -> szlaban.motor_new_feature2;
+	properties
+		Actual_Memory_Binding => (reference (ram)) applies to terminal;
+		Actual_Processor_Binding => (reference (cpu)) applies to terminal;
+END park.simple;
+
+	DEVICE antenna
+	FEATURES
+
+		antenna_new_feature: requires bus access;
+		antenna_new_feature2: requires bus access;
+		antenna_new_feature3: requires bus access;
+		antenna_new_feature4: requires bus access;
+		antenna_new_feature5: out data port;
+		antenna_new_feature6: out data port;
+		antenna_new_feature7: in data port;
+		antenna_new_feature8: in event port;
+		antenna_new_feature9: out event port;
+	properties
+		Compute_Execution_Time => 1ms .. 2ms;
+		Deadline => 1ms;
+		Period => 1ms;
+END antenna;
+
+	DEVICE motor
+	FEATURES
+
+		VME: REQUIRES BUS ACCESS VME;
+		motor_new_feature: in data port;
+		motor_new_feature2: in event port;
+	properties
+		Compute_Execution_Time => 1ms .. 2ms;
+		Deadline => 1ms;
+		Period => 1ms;
+END motor;
+
+	DEVICE screen
+	FEATURES
+
+		VME: REQUIRES BUS ACCESS VME;
+		screen_new_feature: in data port;
+	properties
+		Compute_Execution_Time => 1ms .. 2ms;
+		Deadline => 1ms;
+		Period => 1ms;
+END screen;
+
+
+	PROCESS processing
+	features
+		processing_new_feature: in data port;
+		processing_new_feature2: in data port;
+		processing_new_feature3: out data port;
+		processing_new_feature4: out event port;
+end processing;
+
+	PROCESS IMPLEMENTATION processing.others
+	SUBCOMPONENTS
+		receive: THREAD receiver.impl;
+		analyse: THREAD analyser.impl;
+		display: THREAD display_panel.impl;
+		transmit: THREAD transmitter.impl;
+		control_angle: THREAD controller.impl;
+		countPay: thread receiver.impl;
+		countCars: thread receiver.impl;
+		receivePay: thread receiver.impl;
+	connections
+		A14: PORT receive.receiver_out -> analyse.from_receiver;
+		A15: PORT analyse.analyser_out -> display.display_in;
+		A16: PORT transmit.transmitter_out -> analyse.from_transmitter;
+		A17: PORT control_angle.controller_out -> analyse.from_controller;
+		processing_others_new_connection: feature processing_new_feature2 -> countPay.receiver_new_feature2;
+		processing_others_new_connection2: feature processing_new_feature -> countCars.receiver_new_feature;
+		processing_others_new_connection3: feature countCars.receiver_new_feature3 -> processing_new_feature3;
+		processing_others_new_connection4: feature countPay.receiver_new_feature6 -> receivePay.receiver_new_feature4;
+		processing_others_new_connection5: feature receivePay.receiver_new_feature5 -> processing_new_feature4;
+end processing.others;
+
+
+	THREAD receiver
+	FEATURES
+		receiver_out: OUT DATA PORT radar_types::Target_Distance;
+		receiver_in: IN DATA PORT radar_types::Target_Distance;
+		receiver_new_feature: in data port;
+		receiver_new_feature2: in data port;
+		receiver_new_feature3: out data port;
+		receiver_new_feature4: in event port;
+		receiver_new_feature5: out event port;
+		receiver_new_feature6: out event port;
+end receiver;
+
+	THREAD IMPLEMENTATION receiver.impl
+		CALLS
+			CS: {
+				RS: SUBPROGRAM Receiver_Spg;
+			};
+		CONNECTIONS
+			A18: PARAMETER RS.receiver_out -> receiver_out;
+			A19: PARAMETER receiver_in -> RS.receiver_in;
+		PROPERTIES
+
+			Priority => 63;
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 10ms .. 20ms;
+			Deadline => 150ms;
+			Period => 1500ms;
+	END receiver.impl;
+
+	SUBPROGRAM Receiver_Spg
+		FEATURES
+			receiver_out: OUT PARAMETER radar_types::Target_Distance;
+			receiver_in: IN PARAMETER radar_types::Target_Distance;
+		properties
+			Source_Language => (Ada95);
+			Source_Name => "park.receiver";
+	END Receiver_Spg;
+
+
+	THREAD analyser
+		FEATURES
+			from_receiver: IN DATA PORT radar_types::Target_Distance;
+			analyser_out: OUT DATA PORT radar_types::Target_Position.Impl;
+			from_controller: IN DATA PORT radar_types::Motor_Position;
+			from_transmitter: IN EVENT PORT;
+	end analyser;
+
+	THREAD IMPLEMENTATION analyser.impl
+		CALLS
+			CS: {
+				AS: SUBPROGRAM Analyser_Spg;
+			};
+		CONNECTIONS
+			A20: PARAMETER from_receiver -> AS.from_receiver;
+			A21: PARAMETER AS.analyser_out -> analyser_out;
+			A22: PARAMETER from_controller -> AS.from_controller;
+		PROPERTIES
+
+			Priority => 62;
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 40ms .. 60ms;
+			Deadline => 500ms;
+			Period => 5000ms;
+	END analyser.impl;
+
+	SUBPROGRAM Analyser_Spg
+		FEATURES
+			from_receiver: IN PARAMETER radar_types::Target_Distance;
+			analyser_out: OUT PARAMETER radar_types::Target_Position.Impl;
+			from_controller: IN PARAMETER radar_types::Motor_Position;
+		properties
+			Source_Language => (Ada95);
+			Source_Name => "park.analyser";
+	END Analyser_Spg;
+
+
+	THREAD display_panel
+		FEATURES
+			display_in: IN DATA PORT radar_types::Target_Position.Impl;
+			display_out: OUT EVENT PORT;
+	END display_panel;
+
+	THREAD IMPLEMENTATION display_panel.impl
+		CALLS
+			CS: {
+				DS: SUBPROGRAM Display_Spg;
+			};
+		CONNECTIONS
+			A23: PARAMETER display_in -> DS.display_in;
+		PROPERTIES
+
+			Priority => 60;
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 10ms .. 30ms;
+			Deadline => 200ms;
+			Period => 2000ms;
+	END display_panel.impl;
+
+	SUBPROGRAM Display_Spg
+		FEATURES
+			display_in: IN PARAMETER radar_types::Target_Position.Impl;
+		properties
+			Source_Language => (Ada95);
+			Source_Name => "park.display_panel";
+	END Display_Spg;
+
+
+	THREAD transmitter
+		FEATURES
+			transmitter_out: OUT EVENT PORT;
+	END transmitter;
+
+	THREAD IMPLEMENTATION transmitter.impl
+		PROPERTIES
+
+			Priority => 71;
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 10ms .. 10ms;
+			Compute_Entrypoint_Source_Text => "park.transmitter";
+			Deadline => 50ms;
+			Period => 500ms;
+	END transmitter.impl;
+
+	THREAD controller
+		FEATURES
+			controller_in: IN DATA PORT radar_types::Motor_Position;
+			controller_out: OUT DATA PORT radar_types::Motor_Position;
+	END controller;
+
+	THREAD IMPLEMENTATION controller.impl
+		CALLS
+			CS1: {
+				CS: SUBPROGRAM Controller_Spg;
+			};
+		CONNECTIONS
+			A24: PARAMETER controller_in -> CS.controller_in;
+			A25: PARAMETER CS.controller_out -> controller_out;
+		PROPERTIES
+
+			Priority => 70;
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 10ms .. 10ms;
+			Deadline => 150ms;
+			Period => 1500ms;
+	END controller.impl;
+
+	SUBPROGRAM Controller_Spg
+		FEATURES
+			controller_in: IN PARAMETER radar_types::Motor_Position;
+			controller_out: OUT PARAMETER radar_types::Motor_Position;
+		properties
+			Source_Language => (Ada95);
+			Source_Name => "park.controller";
+	END Controller_Spg;
+
+	PROCESSOR leon2
+		FEATURES
+			VME: REQUIRES BUS ACCESS VME;
+		PROPERTIES
+			Clock_Period => 200ns;
+			Scheduling_Protocol => (Posix_1003_Highest_Priority_First_Protocol);
+			Deployment::Execution_Platform => Native;
+			Priority_Range => 0 .. 255;
+	END leon2;
+
+	BUS VME
+	END VME;
+
+
+	MEMORY RAM
+		FEATURES
+			VME: REQUIRES BUS ACCESS VME;
+	END RAM;
+
+end parking;
